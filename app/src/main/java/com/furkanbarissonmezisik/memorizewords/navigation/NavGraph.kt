@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.furkanbarissonmezisik.memorizewords.ui.screen.AddWordsScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.HomeScreen
+import com.furkanbarissonmezisik.memorizewords.ui.screen.InfoScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.LearnModeSelectionScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.LearnScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.SettingsScreen
@@ -18,6 +19,7 @@ sealed class Screen(val route: String) {
     object Home : Screen("home")
     object AddWords : Screen("add_words")
     object Settings : Screen("settings")
+    object Info : Screen("info")
     object WordList : Screen("word_list/{listId}?openAddDialog={openAddDialog}") {
         fun createRoute(listId: Long, openAddDialog: Boolean = false) = "word_list/$listId?openAddDialog=$openAddDialog"
     }
@@ -84,6 +86,14 @@ fun NavGraph(
                             popUpTo(Screen.Home.route) { saveState = true }
                         }
                     }
+                },
+                onNavigateToInfo = {
+                    if (navController.currentDestination?.route == Screen.Home.route) {
+                        navController.navigate(Screen.Info.route) {
+                            launchSingleTop = true
+                            popUpTo(Screen.Home.route) { saveState = true }
+                        }
+                    }
                 }
             )
         }
@@ -111,6 +121,16 @@ fun NavGraph(
             SettingsScreen(
                 onNavigateBack = {
                     if (navController.currentDestination?.route == Screen.Settings.route) {
+                        navController.popBackStack()
+                    }
+                }
+            )
+        }
+        
+        composable(Screen.Info.route) {
+            InfoScreen(
+                onNavigateBack = {
+                    if (navController.currentDestination?.route == Screen.Info.route) {
                         navController.popBackStack()
                     }
                 }

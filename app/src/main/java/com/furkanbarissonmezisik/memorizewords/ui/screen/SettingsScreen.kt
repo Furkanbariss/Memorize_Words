@@ -37,6 +37,7 @@ fun SettingsScreen(
                         fontSize = 20.sp
                     )
                 },
+
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(

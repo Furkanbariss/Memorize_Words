@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Settings
 
 import androidx.compose.material3.*
@@ -26,6 +27,7 @@ fun HomeScreen(
     onNavigateToLearn: (Long) -> Unit,
     onNavigateToWordList: (Long) -> Unit,
     onNavigateToSettings: () -> Unit,
+    onNavigateToInfo: () -> Unit,
     viewModel: HomeViewModel = viewModel(factory = HomeViewModelFactory(LocalContext.current))
 ) {
     val wordLists by viewModel.wordLists.collectAsState()
@@ -51,6 +53,22 @@ fun HomeScreen(
                         fontWeight = FontWeight.Bold,
                         fontSize = 24.sp
                     )
+                },
+                actions = {
+                    IconButton(onClick = onNavigateToInfo) {
+                        Icon(
+                            imageVector = Icons.Default.Info,
+                            contentDescription = "Info",
+                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    }
+                    IconButton(onClick = onNavigateToSettings) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Settings",
+                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -91,28 +109,7 @@ fun HomeScreen(
                 )
             }
             
-            // Settings button
-            OutlinedButton(
-                onClick = onNavigateToSettings,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp)
-                    .padding(bottom = 24.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary
-                )
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = null,
-                    modifier = Modifier.padding(end = 8.dp)
-                )
-                Text(
-                    text = "Settings",
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Medium
-                )
-            }
+
             
 
             
