@@ -9,24 +9,28 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.furkanbarissonmezisik.memorizewords.data.AppDatabase
 import com.furkanbarissonmezisik.memorizewords.data.repository.WordRepository
 import com.furkanbarissonmezisik.memorizewords.navigation.NavGraph
 import com.furkanbarissonmezisik.memorizewords.ui.theme.MemorizeWordsTheme
+import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MemorizeWordsTheme {
+            val themeManager = remember { ThemeManager(this) }
+            
+            MemorizeWordsTheme(themeManager = themeManager) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    WordMemorizerApp()
+                    WordMemorizerApp(themeManager = themeManager)
                 }
             }
         }
@@ -43,7 +47,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun WordMemorizerApp() {
+fun WordMemorizerApp(themeManager: ThemeManager) {
     val navController = rememberNavController()
     
     // Add navigation state protection
@@ -60,5 +64,5 @@ fun WordMemorizerApp() {
         }
     }
     
-    NavGraph(navController = navController)
+    NavGraph(navController = navController, themeManager = themeManager)
 }
