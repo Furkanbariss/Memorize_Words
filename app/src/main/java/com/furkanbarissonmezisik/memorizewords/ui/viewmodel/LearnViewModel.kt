@@ -76,11 +76,14 @@ class LearnViewModel(
                         _learnSession.value = session
                         _currentState.value = LearnState.LEARNING
                     } else {
+                        // No words found - stop loading and show message
                         _currentState.value = LearnState.NO_WORDS
+                        _learnSession.value = null
                     }
                 }
             } catch (e: Exception) {
                 _errorMessage.value = "Failed to start learning: ${e.message}"
+                _currentState.value = LearnState.NO_WORDS
             } finally {
                 _isLoading.value = false
             }

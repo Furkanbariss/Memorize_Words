@@ -37,6 +37,14 @@ fun LearnScreen(
     
     var selectedMode by remember { mutableStateOf<LearnMode?>(null) }
     
+    // State protection - prevent rendering with invalid data
+    if (listId <= 0 || mode.isEmpty()) {
+        LaunchedEffect(Unit) {
+            onNavigateBack()
+        }
+        return
+    }
+    
     LaunchedEffect(errorMessage) {
         errorMessage?.let {
             // Handle error display if needed
@@ -59,6 +67,13 @@ fun LearnScreen(
         }
     }
     
+    // Safe back navigation with state protection
+    val safeNavigateBack = {
+        if (currentState != LearnState.LOADING) {
+            onNavigateBack()
+        }
+    }
+    
     Scaffold(
         topBar = {
             TopAppBar(
@@ -78,7 +93,7 @@ fun LearnScreen(
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = onNavigateBack) {
+                    IconButton(onClick = safeNavigateBack) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "Back"
@@ -93,6 +108,20 @@ fun LearnScreen(
             )
         }
     ) { paddingValues ->
+        // State validation before rendering
+        if (learnSession == null && currentState == LearnState.LOADING) {
+            // Show loading state only when actually loading
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+            return@Scaffold
+        }
+        
         when (currentState) {
             LearnState.LOADING -> {
                 Box(
@@ -112,37 +141,60 @@ fun LearnScreen(
             }
             
             LearnState.NO_WORDS -> {
-                // No words in list screen
+                // No words in list screen with better UX
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(paddingValues)
-                        .padding(16.dp),
+                        .padding(32.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
+                    // Icon or emoji
                     Text(
-                        text = "📝 No Words Found",
-                        style = MaterialTheme.typography.headlineLarge,
+                        text = "📚",
+                        style = MaterialTheme.typography.displayLarge,
+                        modifier = Modifier.padding(bottom = 16.dp)
+                    )
+                    
+                    Text(
+                        text = "No Words in This List",
+                        style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(bottom = 16.dp)
                     )
                     
                     Text(
-                        text = "This word list is empty. Please add some words first.",
+                        text = "This word list is empty. You need to add words before you can start learning.",
                         style = MaterialTheme.typography.bodyLarge,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(bottom = 32.dp)
+                        modifier = Modifier.padding(bottom = 32.dp),
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     
-                    Button(
-                        onClick = onNavigateBack,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(56.dp)
+                    // Action buttons
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        Text("Back to Home")
+                        Button(
+                            onClick = onNavigateBack,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(56.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.primary
+                            )
+                        ) {
+                            Text(
+                                "Back to Home",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+                        }
+                        
+
                     }
                 }
             }

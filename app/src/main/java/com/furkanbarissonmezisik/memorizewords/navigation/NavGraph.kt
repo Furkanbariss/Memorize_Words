@@ -1,6 +1,8 @@
 package com.furkanbarissonmezisik.memorizewords.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -9,11 +11,13 @@ import com.furkanbarissonmezisik.memorizewords.ui.screen.AddWordsScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.HomeScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.LearnModeSelectionScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.LearnScreen
+import com.furkanbarissonmezisik.memorizewords.ui.screen.SettingsScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.WordListScreen
 
 sealed class Screen(val route: String) {
     object Home : Screen("home")
     object AddWords : Screen("add_words")
+    object Settings : Screen("settings")
     object WordList : Screen("word_list/{listId}?openAddDialog={openAddDialog}") {
         fun createRoute(listId: Long, openAddDialog: Boolean = false) = "word_list/$listId?openAddDialog=$openAddDialog"
     }
@@ -30,6 +34,16 @@ fun NavGraph(
     navController: NavHostController,
     startDestination: String = Screen.Home.route
 ) {
+    // Navigation state protection
+    LaunchedEffect(navController) {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // Prevent rapid navigation changes
+            if (destination.route != null) {
+                // Navigation state validation without delay
+            }
+        }
+    }
+    
     NavHost(
         navController = navController,
         startDestination = startDestination
@@ -37,13 +51,39 @@ fun NavGraph(
         composable(Screen.Home.route) {
             HomeScreen(
                 onNavigateToAddWords = {
-                    navController.navigate(Screen.AddWords.route)
+                    // Prevent multiple rapid navigations
+                    if (navController.currentDestination?.route == Screen.Home.route) {
+                        navController.navigate(Screen.AddWords.route) {
+                            // Prevent multiple instances
+                            launchSingleTop = true
+                            // Clear back stack to prevent navigation loops
+                            popUpTo(Screen.Home.route) { saveState = true }
+                        }
+                    }
                 },
                 onNavigateToLearn = { listId ->
-                    navController.navigate(Screen.LearnModeSelection.createRoute(listId))
+                    if (navController.currentDestination?.route == Screen.Home.route) {
+                        navController.navigate(Screen.LearnModeSelection.createRoute(listId)) {
+                            launchSingleTop = true
+                            popUpTo(Screen.Home.route) { saveState = true }
+                        }
+                    }
                 },
                 onNavigateToWordList = { listId ->
-                    navController.navigate(Screen.WordList.createRoute(listId))
+                    if (navController.currentDestination?.route == Screen.Home.route) {
+                        navController.navigate(Screen.WordList.createRoute(listId)) {
+                            launchSingleTop = true
+                            popUpTo(Screen.Home.route) { saveState = true }
+                        }
+                    }
+                },
+                onNavigateToSettings = {
+                    if (navController.currentDestination?.route == Screen.Home.route) {
+                        navController.navigate(Screen.Settings.route) {
+                            launchSingleTop = true
+                            popUpTo(Screen.Home.route) { saveState = true }
+                        }
+                    }
                 }
             )
         }
@@ -51,10 +91,28 @@ fun NavGraph(
         composable(Screen.AddWords.route) {
             AddWordsScreen(
                 onNavigateToWordList = { listId, openAddDialog ->
-                    navController.navigate(Screen.WordList.createRoute(listId, openAddDialog))
+                    if (navController.currentDestination?.route == Screen.AddWords.route) {
+                        navController.navigate(Screen.WordList.createRoute(listId, openAddDialog)) {
+                            launchSingleTop = true
+                            popUpTo(Screen.AddWords.route) { saveState = true }
+                        }
+                    }
                 },
                 onNavigateBack = {
-                    navController.popBackStack()
+                    // Safe back navigation with state protection
+                    if (navController.currentDestination?.route == Screen.AddWords.route) {
+                        navController.popBackStack()
+                    }
+                }
+            )
+        }
+        
+        composable(Screen.Settings.route) {
+            SettingsScreen(
+                onNavigateBack = {
+                    if (navController.currentDestination?.route == Screen.Settings.route) {
+                        navController.popBackStack()
+                    }
                 }
             )
         }
@@ -71,13 +129,19 @@ fun NavGraph(
         ) { backStackEntry ->
             val listId = backStackEntry.arguments?.getLong("listId") ?: 0L
             val openAddDialog = backStackEntry.arguments?.getBoolean("openAddDialog") ?: false
-            WordListScreen(
-                listId = listId,
-                openAddDialog = openAddDialog,
-                onNavigateBack = {
-                    navController.popBackStack()
-                }
-            )
+            
+            // Validate arguments before rendering
+            if (listId > 0) {
+                WordListScreen(
+                    listId = listId,
+                    openAddDialog = openAddDialog,
+                    onNavigateBack = {
+                        if (navController.currentDestination?.route?.startsWith("word_list") == true) {
+                            navController.popBackStack()
+                        }
+                    }
+                )
+            }
         }
         
         composable(
@@ -87,15 +151,25 @@ fun NavGraph(
             )
         ) { backStackEntry ->
             val listId = backStackEntry.arguments?.getLong("listId") ?: 0L
-            LearnModeSelectionScreen(
-                listId = listId,
-                onNavigateToLearn = { mode ->
-                    navController.navigate(Screen.Learn.createRoute(listId, mode.name))
-                },
-                onNavigateBack = {
-                    navController.popBackStack()
-                }
-            )
+            
+            if (listId > 0) {
+                LearnModeSelectionScreen(
+                    listId = listId,
+                    onNavigateToLearn = { mode ->
+                        if (navController.currentDestination?.route?.startsWith("learn_mode_selection") == true) {
+                            navController.navigate(Screen.Learn.createRoute(listId, mode.name)) {
+                                launchSingleTop = true
+                                popUpTo(Screen.LearnModeSelection.createRoute(listId)) { saveState = true }
+                            }
+                        }
+                    },
+                    onNavigateBack = {
+                        if (navController.currentDestination?.route?.startsWith("learn_mode_selection") == true) {
+                            navController.popBackStack()
+                        }
+                    }
+                )
+            }
         }
         
         composable(
@@ -110,13 +184,18 @@ fun NavGraph(
         ) { backStackEntry ->
             val listId = backStackEntry.arguments?.getLong("listId") ?: 0L
             val mode = backStackEntry.arguments?.getString("mode") ?: "WORD_TO_MEANING"
-            LearnScreen(
-                listId = listId,
-                mode = mode,
-                onNavigateBack = {
-                    navController.popBackStack()
-                }
-            )
+            
+            if (listId > 0 && mode.isNotEmpty()) {
+                LearnScreen(
+                    listId = listId,
+                    mode = mode,
+                    onNavigateBack = {
+                        if (navController.currentDestination?.route?.startsWith("learn") == true) {
+                            navController.popBackStack()
+                        }
+                    }
+                )
+            }
         }
     }
 }

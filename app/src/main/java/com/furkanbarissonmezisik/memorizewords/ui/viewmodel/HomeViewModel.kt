@@ -30,12 +30,19 @@ class HomeViewModel(
         viewModelScope.launch {
             try {
                 _isLoading.value = true
+                var isFirstEmission = true
+                
                 repository.getAllWordLists().collect { lists ->
                     _wordLists.value = lists
+                    
+                    // Only set loading to false after first emission
+                    if (isFirstEmission) {
+                        _isLoading.value = false
+                        isFirstEmission = false
+                    }
                 }
             } catch (e: Exception) {
                 _errorMessage.value = "Failed to load word lists: ${e.message}"
-            } finally {
                 _isLoading.value = false
             }
         }

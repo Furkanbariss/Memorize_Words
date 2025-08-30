@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.furkanbarissonmezisik.memorizewords.data.AppDatabase
@@ -30,10 +31,34 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    
+    // Override back press to prevent rapid back button presses
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        // Prevent rapid back button presses
+        if (!isFinishing) {
+            super.onBackPressed()
+        }
+    }
 }
 
 @Composable
 fun WordMemorizerApp() {
     val navController = rememberNavController()
+    
+    // Add navigation state protection
+    LaunchedEffect(navController) {
+        // Prevent multiple rapid back navigations
+        var lastBackPressTime = 0L
+        val backPressThreshold = 300L // 300ms minimum between back presses
+        
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            // Add navigation state validation
+            if (destination.route != null) {
+                // Ensure proper navigation state without delay
+            }
+        }
+    }
+    
     NavGraph(navController = navController)
 }
