@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">শব্দ মুখস্থ করুন</string>
+    
+    <!-- Navigation -->
+    <string name="back">ফিরে যান</string>
+    <string name="home">হোম</string>
+    <string name="settings">সেটিংস</string>
+    <string name="info">তথ্য</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">শব্দ মুখস্থ করুন</string>
+    <string name="create_new_list">নতুন তালিকা তৈরি করুন</string>
+    <string name="enter_list_name">তালিকার নাম লিখুন</string>
+    <string name="create">তৈরি করুন</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="no_word_lists">এখনও কোন শব্দ তালিকা নেই</string>
+    <string name="create_your_first_list">শুরু করতে আপনার প্রথম শব্দ তালিকা তৈরি করুন!</string>
+    <string name="learn">শিখুন</string>
+    <string name="edit">সম্পাদনা করুন</string>
+    <string name="delete">মুছুন</string>
+    <string name="words">শব্দ</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">অ্যাপ সেটিংস</string>
+    <string name="theme">থিম</string>
+    <string name="language">ভাষা</string>
+    <string name="light_theme">হালকা থিম</string>
+    <string name="dark_theme">গাঢ় থিম</string>
+    <string name="system_default">সিস্টেম ডিফল্ট</string>
+    <string name="theme_preview">থিম প্রিভিউ</string>
+    <string name="features">বৈশিষ্ট্য</string>
+    <string name="features_description">• কাস্টম শব্দ তালিকা তৈরি করুন\n• বিভিন্ন মোডে শব্দ শিখুন\n• আপনার অগ্রগতি ট্র্যাক করুন\n• আপনার তালিকাগুলি সম্পাদনা এবং পরিচালনা করুন\n• হালকা/গাঢ় থিম সমর্থন</string>
+    <string name="back_to_home">হোমে ফিরে যান</string>
+    <string name="app_version">অ্যাপ সংস্করণ</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">শব্দ যোগ করুন</string>
+    <string name="word">শব্দ</string>
+    <string name="translation">অনুবাদ</string>
+    <string name="add_word">শব্দ যোগ করুন</string>
+    <string name="save">সংরক্ষণ করুন</string>
+    <string name="word_added">শব্দ সফলভাবে যোগ করা হয়েছে!</string>
+    <string name="please_enter_word">অনুগ্রহ করে একটি শব্দ লিখুন</string>
+    <string name="please_enter_translation">অনুগ্রহ করে একটি অনুবাদ লিখুন</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">শব্দ তালিকা</string>
+    <string name="add_new_word">নতুন শব্দ যোগ করুন</string>
+    <string name="no_words_in_list">এই তালিকায় এখনও কোন শব্দ নেই</string>
+    <string name="add_some_words">শুরু করতে কিছু শব্দ যোগ করুন!</string>
+    <string name="edit_word">শব্দ সম্পাদনা করুন</string>
+    <string name="delete_word">শব্দ মুছুন</string>
+    <string name="word_updated">শব্দ সফলভাবে আপডেট করা হয়েছে!</string>
+    <string name="word_deleted">শব্দ সফলভাবে মুছে ফেলা হয়েছে!</string>
+    <string name="confirm_delete">মুছে ফেলার নিশ্চিতকরণ</string>
+    <string name="delete_word_confirmation">আপনি কি নিশ্চিত যে আপনি এই শব্দটি মুছতে চান?</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">শেখার মোড নির্বাচন করুন</string>
+    <string name="flashcard_mode">ফ্ল্যাশকার্ড মোড</string>
+    <string name="quiz_mode">কুইজ মোড</string>
+    <string name="typing_mode">টাইপিং মোড</string>
+    <string name="flashcard_description">ফ্ল্যাশকার্ড দিয়ে শব্দ শিখুন</string>
+    <string name="quiz_description">বহু নির্বাচন প্রশ্ন দিয়ে আপনার জ্ঞান পরীক্ষা করুন</string>
+    <string name="typing_description">সঠিক অনুবাদ টাইপ করে অনুশীলন করুন</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">শেখা</string>
+    <string name="progress">অগ্রগতি</string>
+    <string name="correct">সঠিক!</string>
+    <string name="incorrect">ভুল!</string>
+    <string name="try_again">আবার চেষ্টা করুন</string>
+    <string name="next">পরবর্তী</string>
+    <string name="finish">সম্পন্ন করুন</string>
+    <string name="congratulations">অভিনন্দন!</string>
+    <string name="you_completed">আপনি শেখার সেশন সম্পন্ন করেছেন!</string>
+    <string name="score">স্কোর</string>
+    <string name="total_words">মোট শব্দ</string>
+    <string name="correct_answers">সঠিক উত্তর</string>
+    <string name="wrong_answers">ভুল উত্তর</string>
+    <string name="accuracy">সঠিকতা</string>
+    <string name="restart">পুনরায় শুরু করুন</string>
+    
+    <!-- Info Screen -->
+    <string name="about">সম্পর্কে</string>
+    <string name="app_description">বিভিন্ন ভাষায় শব্দ মুখস্থ করতে এবং আপনার শব্দভাণ্ডার উন্নত করতে সাহায্য করার জন্য একটি সহজ এবং কার্যকর Android অ্যাপ।</string>
+    <string name="version">সংস্করণ</string>
+    <string name="developed_by">দ্বারা বিকশিত</string>
+    <string name="features_title">বৈশিষ্ট্য</string>
+    <string name="features_list">• কাস্টম শব্দ তালিকা তৈরি করুন\n• বিভিন্ন মোডে শব্দ শিখুন\n• আপনার অগ্রগতি ট্র্যাক করুন\n• আপনার তালিকাগুলি সম্পাদনা এবং পরিচালনা করুন\n• হালকা/গাঢ় থিম সমর্থন\n• বহুভাষা সমর্থন</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">একটি ত্রুটি ঘটেছে</string>
+    <string name="network_error">নেটওয়ার্ক ত্রুটি</string>
+    <string name="database_error">ডেটাবেস ত্রুটি</string>
+    <string name="unknown_error">অজানা ত্রুটি</string>
+</resources>

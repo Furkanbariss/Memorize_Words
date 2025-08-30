@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">单词记忆</string>
+    
+    <!-- Navigation -->
+    <string name="back">返回</string>
+    <string name="home">首页</string>
+    <string name="settings">设置</string>
+    <string name="info">信息</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">单词记忆</string>
+    <string name="welcome_message">欢迎使用单词记忆！</string>
+    <string name="create_list">创建列表</string>
+    <string name="loading_word_lists">正在加载您的单词列表...</string>
+    <string name="available_lists">可用列表：</string>
+    <string name="tap_to_view_words">点击查看单词</string>
+    <string name="learn">学习</string>
+    <string name="view">查看</string>
+    <string name="no_word_lists_found">未找到单词列表</string>
+    <string name="no_lists_message">您还没有创建任何单词列表。创建您的第一个列表开始记忆单词！</string>
+    <string name="create_your_first_list">创建您的第一个列表</string>
+    <string name="create_new_list">创建新列表</string>
+    <string name="enter_list_name">输入列表名称</string>
+    <string name="create">创建</string>
+    <string name="cancel">取消</string>
+    <string name="no_word_lists">还没有单词列表</string>
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="words">单词</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">应用设置</string>
+    <string name="theme">主题</string>
+    <string name="language">语言</string>
+    <string name="light_theme">浅色主题</string>
+    <string name="dark_theme">深色主题</string>
+    <string name="system_default">系统默认</string>
+    <string name="theme_preview">主题预览</string>
+    <string name="features">功能</string>
+    <string name="features_description">• 创建自定义单词列表\n• 在不同模式下学习单词\n• 跟踪您的进度\n• 编辑和管理您的列表\n• 浅色/深色主题支持</string>
+    <string name="back_to_home">返回首页</string>
+    <string name="app_version">应用版本</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">添加单词</string>
+    <string name="word">单词</string>
+    <string name="translation">翻译</string>
+    <string name="add_word">添加单词</string>
+    <string name="save">保存</string>
+    <string name="word_added">单词添加成功！</string>
+    <string name="please_enter_word">请输入单词</string>
+    <string name="please_enter_translation">请输入翻译</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">单词列表</string>
+    <string name="add_new_word">添加新单词</string>
+    <string name="no_words_in_list">此列表中还没有单词</string>
+    <string name="add_some_words">添加一些单词开始吧！</string>
+    <string name="edit_word">编辑单词</string>
+    <string name="delete_word">删除单词</string>
+    <string name="word_updated">单词更新成功！</string>
+    <string name="word_deleted">单词删除成功！</string>
+    <string name="confirm_delete">确认删除</string>
+    <string name="delete_word_confirmation">您确定要删除这个单词吗？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">选择学习模式</string>
+    <string name="flashcard_mode">卡片模式</string>
+    <string name="quiz_mode">测验模式</string>
+    <string name="typing_mode">打字模式</string>
+    <string name="flashcard_description">使用卡片学习单词</string>
+    <string name="quiz_description">通过选择题测试您的知识</string>
+    <string name="typing_description">通过输入正确的翻译来练习</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">学习</string>
+    <string name="progress">进度</string>
+    <string name="correct">正确！</string>
+    <string name="incorrect">错误！</string>
+    <string name="try_again">重试</string>
+    <string name="next">下一个</string>
+    <string name="finish">完成</string>
+    <string name="congratulations">恭喜！</string>
+    <string name="you_completed">您已完成学习会话！</string>
+    <string name="score">分数</string>
+    <string name="total_words">总单词数</string>
+    <string name="correct_answers">正确答案</string>
+    <string name="wrong_answers">错误答案</string>
+    <string name="accuracy">准确率</string>
+    <string name="restart">重新开始</string>
+    <string name="question">问题：</string>
+    <string name="type_the_word">输入单词</string>
+    <string name="skip">跳过</string>
+    <string name="check">检查</string>
+    <string name="show">显示</string>
+    <string name="completed_percentage">%%d%% 完成</string>
+    
+    <!-- Info Screen -->
+    <string name="about">关于</string>
+    <string name="app_description">一个简单有效的Android应用，帮助您记忆单词并提高不同语言的词汇量。</string>
+    <string name="version">版本</string>
+    <string name="developed_by">开发者</string>
+    <string name="features_title">功能</string>
+    <string name="features_list">• 创建自定义单词列表\n• 在不同模式下学习单词\n• 跟踪您的进度\n• 编辑和管理您的列表\n• 浅色/深色主题支持\n• 多语言支持</string>
+    <string name="app_information">应用信息</string>
+    <string name="personal_vocabulary_assistant">您的个人词汇学习助手</string>
+    <string name="what_is_word_memorizer">什么是单词记忆？</string>
+    <string name="what_is_word_memorizer_description">单词记忆是一个功能强大且用户友好的应用程序，旨在帮助您学习和记忆任何语言中的新词汇。无论您是为考试而学习、学习新语言，还是只是想扩展词汇量，这个应用程序都提供有效的学习体验。</string>
+    <string name="key_features">主要功能</string>
+    <string name="custom_word_lists">📚 自定义单词列表</string>
+    <string name="custom_word_lists_description">为不同主题、语言或学习会话创建个性化列表</string>
+    <string name="multiple_learning_modes">🎯 多种学习模式</string>
+    <string name="multiple_learning_modes_description">在两个方向上练习单词：单词到含义和含义到单词</string>
+    <string name="progress_tracking">📊 进度跟踪</string>
+    <string name="progress_tracking_description">通过视觉指标监控您的学习进度</string>
+    <string name="easy_management">✏️ 轻松管理</string>
+    <string name="easy_management_description">通过简单的手势添加、编辑和删除单词和列表</string>
+    <string name="flexible_learning">🔄 灵活学习</string>
+    <string name="flexible_learning_description">跳过困难的单词，稍后再试</string>
+    <string name="local_storage">💾 本地存储</string>
+    <string name="local_storage_description">您的所有数据都本地存储在您的设备上</string>
+    <string name="how_to_use">如何使用</string>
+    <string name="step_1">创建一个新的单词列表并给它一个有意义的名称</string>
+    <string name="step_2">将单词添加到您的列表中，包含其含义或翻译</string>
+    <string name="step_3">选择学习模式并开始练习</string>
+    <string name="step_4">查看您的进度并继续学习</string>
+    <string name="step_5">根据需要编辑或删除单词和列表</string>
+    <string name="tips_for_effective_learning">有效学习技巧</string>
+    <string name="learning_tips">• 定期学习，即使每天只有几分钟\n• 使用两种学习模式来加强您的记忆\n• 不要担心错误 - 它们是学习的一部分\n• 定期复习已完成的列表以保持记忆\n• 创建主题列表以便更好地组织</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">发生错误</string>
+    <string name="network_error">网络错误</string>
+    <string name="database_error">数据库错误</string>
+    <string name="unknown_error">未知错误</string>
+</resources>

@@ -19,6 +19,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModel
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModelFactory
+import androidx.compose.ui.res.stringResource
+import com.furkanbarissonmezisik.memorizewords.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -85,7 +87,7 @@ fun HomeScreen(
         ) {
             // Welcome text
             Text(
-                text = "Welcome to Word Memorizer!",
+                text = stringResource(R.string.welcome_message),
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.padding(bottom = 24.dp)
@@ -103,7 +105,7 @@ fun HomeScreen(
                 )
             ) {
                 Text(
-                    text = "Create List",
+                    text = stringResource(R.string.create_list),
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Medium
                 )
@@ -128,7 +130,7 @@ fun HomeScreen(
                             modifier = Modifier.padding(bottom = 16.dp)
                         )
                         Text(
-                            text = "Loading your word lists...",
+                            text = stringResource(R.string.loading_word_lists),
                             style = MaterialTheme.typography.bodyLarge,
                             textAlign = TextAlign.Center,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -138,7 +140,7 @@ fun HomeScreen(
                 wordLists.isNotEmpty() -> {
                     // Show available lists
                     Text(
-                        text = "Available Lists:",
+                        text = stringResource(R.string.available_lists),
                         style = MaterialTheme.typography.titleMedium,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
@@ -169,7 +171,7 @@ fun HomeScreen(
                                             style = MaterialTheme.typography.bodyLarge
                                         )
                                         Text(
-                                            text = "Tap to view words",
+                                            text = stringResource(R.string.tap_to_view_words),
                                             style = MaterialTheme.typography.bodySmall,
                                             color = MaterialTheme.colorScheme.onSurfaceVariant
                                         )
@@ -182,7 +184,7 @@ fun HomeScreen(
                                             ),
                                             modifier = Modifier.padding(end = 8.dp)
                                         ) {
-                                            Text("Learn")
+                                            Text(stringResource(R.string.learn))
                                         }
                                         Button(
                                             onClick = { onNavigateToWordList(wordList.id) },
@@ -190,7 +192,7 @@ fun HomeScreen(
                                                 containerColor = MaterialTheme.colorScheme.primary
                                             )
                                         ) {
-                                            Text("View")
+                                            Text(stringResource(R.string.view))
                                         }
                                     }
                                 }
@@ -215,7 +217,7 @@ fun HomeScreen(
                         )
                         
                         Text(
-                            text = "No Word Lists Found",
+                            text = stringResource(R.string.no_word_lists_found),
                             style = MaterialTheme.typography.headlineMedium,
                             fontWeight = FontWeight.Bold,
                             textAlign = TextAlign.Center,
@@ -223,7 +225,7 @@ fun HomeScreen(
                         )
                         
                         Text(
-                            text = "You haven't created any word lists yet. Create your first list to start memorizing words!",
+                            text = stringResource(R.string.no_lists_message),
                             style = MaterialTheme.typography.bodyLarge,
                             textAlign = TextAlign.Center,
                             modifier = Modifier.padding(bottom = 32.dp),
@@ -240,7 +242,7 @@ fun HomeScreen(
                             )
                         ) {
                             Text(
-                                "Create Your First List",
+                                stringResource(R.string.create_your_first_list),
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.Medium
                             )

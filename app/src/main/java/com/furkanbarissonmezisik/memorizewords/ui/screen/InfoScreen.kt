@@ -12,10 +12,12 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.furkanbarissonmezisik.memorizewords.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -27,7 +29,7 @@ fun InfoScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "App Information",
+                        text = stringResource(R.string.app_information),
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp
                     )
@@ -36,7 +38,7 @@ fun InfoScreen(
                     IconButton(onClick = onNavigateBack) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = stringResource(R.string.back)
                         )
                     }
                 },
@@ -71,7 +73,7 @@ fun InfoScreen(
                     )
                     
                     Text(
-                        text = "Word Memorizer",
+                        text = stringResource(R.string.word_memorizer),
                         style = MaterialTheme.typography.headlineLarge,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -79,7 +81,7 @@ fun InfoScreen(
                     )
                     
                     Text(
-                        text = "Your Personal Vocabulary Learning Assistant",
+                        text = stringResource(R.string.personal_vocabulary_assistant),
                         style = MaterialTheme.typography.titleMedium,
                         textAlign = TextAlign.Center,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -110,14 +112,14 @@ fun InfoScreen(
                                 modifier = Modifier.padding(end = 8.dp)
                             )
                             Text(
-                                text = "What is Word Memorizer?",
+                                text = stringResource(R.string.what_is_word_memorizer),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
                         }
                         
                         Text(
-                            text = "Word Memorizer is a powerful and user-friendly application designed to help you learn and remember new vocabulary words in any language. Whether you're studying for exams, learning a new language, or simply want to expand your vocabulary, this app provides an effective learning experience.",
+                            text = stringResource(R.string.what_is_word_memorizer_description),
                             style = MaterialTheme.typography.bodyMedium,
                             lineHeight = 22.sp
                         )
@@ -148,7 +150,7 @@ fun InfoScreen(
                                 modifier = Modifier.padding(end = 8.dp)
                             )
                             Text(
-                                text = "Key Features",
+                                text = stringResource(R.string.key_features),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold
                             )
@@ -157,12 +159,30 @@ fun InfoScreen(
                         Column(
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            FeatureItem("📚 Custom Word Lists", "Create personalized lists for different topics, languages, or study sessions")
-                            FeatureItem("🎯 Multiple Learning Modes", "Practice words in both directions: word-to-meaning and meaning-to-word")
-                            FeatureItem("📊 Progress Tracking", "Monitor your learning progress with visual indicators")
-                            FeatureItem("✏️ Easy Management", "Add, edit, and delete words and lists with simple gestures")
-                            FeatureItem("🔄 Flexible Learning", "Skip difficult words and retry them later")
-                            FeatureItem("💾 Local Storage", "All your data is stored locally on your device")
+                            FeatureItem(
+                                stringResource(R.string.custom_word_lists),
+                                stringResource(R.string.custom_word_lists_description)
+                            )
+                            FeatureItem(
+                                stringResource(R.string.multiple_learning_modes),
+                                stringResource(R.string.multiple_learning_modes_description)
+                            )
+                            FeatureItem(
+                                stringResource(R.string.progress_tracking),
+                                stringResource(R.string.progress_tracking_description)
+                            )
+                            FeatureItem(
+                                stringResource(R.string.easy_management),
+                                stringResource(R.string.easy_management_description)
+                            )
+                            FeatureItem(
+                                stringResource(R.string.flexible_learning),
+                                stringResource(R.string.flexible_learning_description)
+                            )
+                            FeatureItem(
+                                stringResource(R.string.local_storage),
+                                stringResource(R.string.local_storage_description)
+                            )
                         }
                     }
                 }
@@ -181,7 +201,7 @@ fun InfoScreen(
                             .padding(16.dp)
                     ) {
                         Text(
-                            text = "How to Use",
+                            text = stringResource(R.string.how_to_use),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(bottom = 12.dp)
@@ -190,11 +210,11 @@ fun InfoScreen(
                         Column(
                             verticalArrangement = Arrangement.spacedBy(12.dp)
                         ) {
-                            StepItem("1", "Create a new word list and give it a meaningful name")
-                            StepItem("2", "Add words to your list with their meanings or translations")
-                            StepItem("3", "Choose a learning mode and start practicing")
-                            StepItem("4", "Review your progress and continue learning")
-                            StepItem("5", "Edit or delete words and lists as needed")
+                            StepItem("1", stringResource(R.string.step_1))
+                            StepItem("2", stringResource(R.string.step_2))
+                            StepItem("3", stringResource(R.string.step_3))
+                            StepItem("4", stringResource(R.string.step_4))
+                            StepItem("5", stringResource(R.string.step_5))
                         }
                     }
                 }
@@ -213,14 +233,14 @@ fun InfoScreen(
                             .padding(16.dp)
                     ) {
                         Text(
-                            text = "Tips for Effective Learning",
+                            text = stringResource(R.string.tips_for_effective_learning),
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier.padding(bottom = 12.dp)
                         )
                         
                         Text(
-                            text = "• Study regularly, even if just for a few minutes each day\n• Use both learning modes to strengthen your memory\n• Don't worry about mistakes - they're part of learning\n• Review completed lists periodically to maintain retention\n• Create themed lists for better organization",
+                            text = stringResource(R.string.learning_tips),
                             style = MaterialTheme.typography.bodyMedium,
                             lineHeight = 22.sp
                         )

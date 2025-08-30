@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">Memorizar Palavras</string>
+    
+    <!-- Navigation -->
+    <string name="back">Voltar</string>
+    <string name="home">Início</string>
+    <string name="settings">Configurações</string>
+    <string name="info">Informações</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">Memorizar Palavras</string>
+    <string name="create_new_list">Criar Nova Lista</string>
+    <string name="enter_list_name">Digite o nome da lista</string>
+    <string name="create">Criar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="no_word_lists">Ainda não há listas de palavras</string>
+    <string name="create_your_first_list">Crie sua primeira lista de palavras para começar!</string>
+    <string name="learn">Aprender</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Excluir</string>
+    <string name="words">palavras</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">Configurações do App</string>
+    <string name="theme">Tema</string>
+    <string name="language">Idioma</string>
+    <string name="light_theme">Tema Claro</string>
+    <string name="dark_theme">Tema Escuro</string>
+    <string name="system_default">Padrão do Sistema</string>
+    <string name="theme_preview">Visualização do Tema</string>
+    <string name="features">Recursos</string>
+    <string name="features_description">• Criar listas de palavras personalizadas\n• Aprender palavras em diferentes modos\n• Acompanhar seu progresso\n• Editar e gerenciar suas listas\n• Suporte a tema claro/escuro</string>
+    <string name="back_to_home">Voltar ao Início</string>
+    <string name="app_version">Versão do App</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">Adicionar Palavras</string>
+    <string name="word">Palavra</string>
+    <string name="translation">Tradução</string>
+    <string name="add_word">Adicionar Palavra</string>
+    <string name="save">Salvar</string>
+    <string name="word_added">Palavra adicionada com sucesso!</string>
+    <string name="please_enter_word">Por favor, digite uma palavra</string>
+    <string name="please_enter_translation">Por favor, digite uma tradução</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">Lista de Palavras</string>
+    <string name="add_new_word">Adicionar Nova Palavra</string>
+    <string name="no_words_in_list">Ainda não há palavras nesta lista</string>
+    <string name="add_some_words">Adicione algumas palavras para começar!</string>
+    <string name="edit_word">Editar Palavra</string>
+    <string name="delete_word">Excluir Palavra</string>
+    <string name="word_updated">Palavra atualizada com sucesso!</string>
+    <string name="word_deleted">Palavra excluída com sucesso!</string>
+    <string name="confirm_delete">Confirmar Exclusão</string>
+    <string name="delete_word_confirmation">Tem certeza de que deseja excluir esta palavra?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">Selecionar Modo de Aprendizado</string>
+    <string name="flashcard_mode">Modo Cartão</string>
+    <string name="quiz_mode">Modo Questionário</string>
+    <string name="typing_mode">Modo Digitação</string>
+    <string name="flashcard_description">Aprenda palavras com cartões</string>
+    <string name="quiz_description">Teste seu conhecimento com perguntas de múltipla escolha</string>
+    <string name="typing_description">Pratique digitando a tradução correta</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">Aprendendo</string>
+    <string name="progress">Progresso</string>
+    <string name="correct">Correto!</string>
+    <string name="incorrect">Incorreto!</string>
+    <string name="try_again">Tentar Novamente</string>
+    <string name="next">Próximo</string>
+    <string name="finish">Finalizar</string>
+    <string name="congratulations">Parabéns!</string>
+    <string name="you_completed">Você completou a sessão de aprendizado!</string>
+    <string name="score">Pontuação</string>
+    <string name="total_words">Total de Palavras</string>
+    <string name="correct_answers">Respostas Corretas</string>
+    <string name="wrong_answers">Respostas Incorretas</string>
+    <string name="accuracy">Precisão</string>
+    <string name="restart">Reiniciar</string>
+    
+    <!-- Info Screen -->
+    <string name="about">Sobre</string>
+    <string name="app_description">Um aplicativo Android simples e eficaz para ajudá-lo a memorizar palavras e melhorar seu vocabulário em diferentes idiomas.</string>
+    <string name="version">Versão</string>
+    <string name="developed_by">Desenvolvido por</string>
+    <string name="features_title">Recursos</string>
+    <string name="features_list">• Criar listas de palavras personalizadas\n• Aprender palavras em diferentes modos\n• Acompanhar seu progresso\n• Editar e gerenciar suas listas\n• Suporte a tema claro/escuro\n• Suporte multilíngue</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">Ocorreu um erro</string>
+    <string name="network_error">Erro de rede</string>
+    <string name="database_error">Erro de banco de dados</string>
+    <string name="unknown_error">Erro desconhecido</string>
+</resources>

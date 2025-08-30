@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Memorizar Palabras</string>
+    
+    <!-- Navigation -->
+    <string name="back">Atrás</string>
+    <string name="home">Inicio</string>
+    <string name="settings">Configuración</string>
+    <string name="info">Información</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">Memorizar Palabras</string>
+    <string name="welcome_message">¡Bienvenido a Memorizar Palabras!</string>
+    <string name="create_list">Crear Lista</string>
+    <string name="loading_word_lists">Cargando sus listas de palabras...</string>
+    <string name="available_lists">Listas Disponibles:</string>
+    <string name="tap_to_view_words">Toque para ver las palabras</string>
+    <string name="learn">Aprender</string>
+    <string name="view">Ver</string>
+    <string name="no_word_lists_found">No Se Encontraron Listas de Palabras</string>
+    <string name="no_lists_message">Aún no ha creado listas de palabras. ¡Cree su primera lista para comenzar a memorizar palabras!</string>
+    <string name="create_your_first_list">Cree su primera lista</string>
+    <string name="create_new_list">Crear Nueva Lista</string>
+    <string name="enter_list_name">Ingrese el nombre de la lista</string>
+    <string name="create">Crear</string>
+    <string name="cancel">Cancelar</string>
+    <string name="no_word_lists">Aún no hay listas de palabras</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="words">palabras</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">Configuración de la Aplicación</string>
+    <string name="theme">Tema</string>
+    <string name="language">Idioma</string>
+    <string name="light_theme">Tema Claro</string>
+    <string name="dark_theme">Tema Oscuro</string>
+    <string name="system_default">Predeterminado del Sistema</string>
+    <string name="theme_preview">Vista Previa del Tema</string>
+    <string name="features">Características</string>
+    <string name="features_description">• Crear listas de palabras personalizadas\n• Aprender palabras en diferentes modos\n• Rastrear su progreso\n• Editar y gestionar sus listas\n• Soporte para tema claro/oscuro</string>
+    <string name="back_to_home">Volver al Inicio</string>
+    <string name="app_version">Versión de la Aplicación</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">Agregar Palabras</string>
+    <string name="word">Palabra</string>
+    <string name="translation">Traducción</string>
+    <string name="add_word">Agregar Palabra</string>
+    <string name="save">Guardar</string>
+    <string name="word_added">¡Palabra agregada exitosamente!</string>
+    <string name="please_enter_word">Por favor ingrese una palabra</string>
+    <string name="please_enter_translation">Por favor ingrese una traducción</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">Lista de Palabras</string>
+    <string name="add_new_word">Agregar Nueva Palabra</string>
+    <string name="no_words_in_list">Aún no hay palabras en esta lista</string>
+    <string name="add_some_words">¡Agregue algunas palabras para comenzar!</string>
+    <string name="edit_word">Editar Palabra</string>
+    <string name="delete_word">Eliminar Palabra</string>
+    <string name="word_updated">¡Palabra actualizada exitosamente!</string>
+    <string name="word_deleted">¡Palabra eliminada exitosamente!</string>
+    <string name="confirm_delete">Confirmar Eliminación</string>
+    <string name="delete_word_confirmation">¿Está seguro de que desea eliminar esta palabra?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">Seleccionar Modo de Aprendizaje</string>
+    <string name="flashcard_mode">Modo Tarjetas</string>
+    <string name="quiz_mode">Modo Cuestionario</string>
+    <string name="typing_mode">Modo Escritura</string>
+    <string name="flashcard_description">Aprenda palabras con tarjetas</string>
+    <string name="quiz_description">Pruebe su conocimiento con preguntas de opción múltiple</string>
+    <string name="typing_description">Practique escribiendo la traducción correcta</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">Aprendiendo</string>
+    <string name="progress">Progreso</string>
+    <string name="correct">¡Correcto!</string>
+    <string name="incorrect">¡Incorrecto!</string>
+    <string name="try_again">Intentar de Nuevo</string>
+    <string name="next">Siguiente</string>
+    <string name="finish">Finalizar</string>
+    <string name="congratulations">¡Felicitaciones!</string>
+    <string name="you_completed">¡Ha completado la sesión de aprendizaje!</string>
+    <string name="score">Puntuación</string>
+    <string name="total_words">Total de Palabras</string>
+    <string name="correct_answers">Respuestas Correctas</string>
+    <string name="wrong_answers">Respuestas Incorrectas</string>
+    <string name="accuracy">Precisión</string>
+    <string name="restart">Reiniciar</string>
+    <string name="question">Pregunta:</string>
+    <string name="type_the_word">Escriba la palabra</string>
+    <string name="skip">Saltar</string>
+    <string name="check">Verificar</string>
+    <string name="show">Mostrar</string>
+    <string name="completed_percentage">%%d%% completado</string>
+    
+    <!-- Info Screen -->
+    <string name="about">Acerca de</string>
+    <string name="app_description">Una aplicación Android simple y efectiva para ayudarle a memorizar palabras y mejorar su vocabulario en diferentes idiomas.</string>
+    <string name="version">Versión</string>
+    <string name="developed_by">Desarrollado por</string>
+    <string name="features_title">Características</string>
+    <string name="features_list">• Crear listas de palabras personalizadas\n• Aprender palabras en diferentes modos\n• Rastrear su progreso\n• Editar y gestionar sus listas\n• Soporte para tema claro/oscuro\n• Soporte multiidioma</string>
+    <string name="app_information">Información de la Aplicación</string>
+    <string name="personal_vocabulary_assistant">Su Asistente Personal de Aprendizaje de Vocabulario</string>
+    <string name="what_is_word_memorizer">¿Qué es Memorizar Palabras?</string>
+    <string name="what_is_word_memorizer_description">Memorizar Palabras es una aplicación potente y fácil de usar diseñada para ayudarle a aprender y recordar nuevas palabras de vocabulario en cualquier idioma. Ya sea que esté estudiando para exámenes, aprendiendo un nuevo idioma o simplemente quiera expandir su vocabulario, esta aplicación proporciona una experiencia de aprendizaje efectiva.</string>
+    <string name="key_features">Características Principales</string>
+    <string name="custom_word_lists">📚 Listas de Palabras Personalizadas</string>
+    <string name="custom_word_lists_description">Cree listas personalizadas para diferentes temas, idiomas o sesiones de estudio</string>
+    <string name="multiple_learning_modes">🎯 Múltiples Modos de Aprendizaje</string>
+    <string name="multiple_learning_modes_description">Practique palabras en ambas direcciones: palabra-a-significado y significado-a-palabra</string>
+    <string name="progress_tracking">📊 Seguimiento de Progreso</string>
+    <string name="progress_tracking_description">Monitoree su progreso de aprendizaje con indicadores visuales</string>
+    <string name="easy_management">✏️ Gestión Fácil</string>
+    <string name="easy_management_description">Agregue, edite y elimine palabras y listas con gestos simples</string>
+    <string name="flexible_learning">🔄 Aprendizaje Flexible</string>
+    <string name="flexible_learning_description">Omita palabras difíciles e inténtelas más tarde</string>
+    <string name="local_storage">💾 Almacenamiento Local</string>
+    <string name="local_storage_description">Todos sus datos se almacenan localmente en su dispositivo</string>
+    <string name="how_to_use">Cómo Usar</string>
+    <string name="step_1">Cree una nueva lista de palabras y déle un nombre significativo</string>
+    <string name="step_2">Agregue palabras a su lista con sus significados o traducciones</string>
+    <string name="step_3">Elija un modo de aprendizaje y comience a practicar</string>
+    <string name="step_4">Revise su progreso y continúe aprendiendo</string>
+    <string name="step_5">Edite o elimine palabras y listas según sea necesario</string>
+    <string name="tips_for_effective_learning">Consejos para un Aprendizaje Efectivo</string>
+    <string name="learning_tips">• Estudie regularmente, incluso si es solo unos minutos cada día\n• Use ambos modos de aprendizaje para fortalecer su memoria\n• No se preocupe por los errores - son parte del aprendizaje\n• Revise las listas completadas periódicamente para mantener la retención\n• Cree listas temáticas para una mejor organización</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">Ocurrió un error</string>
+    <string name="network_error">Error de red</string>
+    <string name="database_error">Error de base de datos</string>
+    <string name="unknown_error">Error desconocido</string>
+</resources>

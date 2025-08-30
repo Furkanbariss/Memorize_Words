@@ -14,6 +14,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.res.stringResource
+import com.furkanbarissonmezisik.memorizewords.R
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnMode
@@ -80,13 +82,13 @@ fun LearnScreen(
                 title = {
                     Text(
                         text = when (currentState) {
-                            LearnState.LOADING -> "Loading..."
-                            LearnState.NO_WORDS -> "No Words"
-                            LearnState.LEARNING -> "Learning"
-                            LearnState.CORRECT -> "Correct!"
-                            LearnState.WRONG -> "Try Again"
-                            LearnState.SHOW_ANSWER -> "Answer"
-                            LearnState.COMPLETED -> "Completed!"
+                            LearnState.LOADING -> stringResource(R.string.loading_word_lists)
+                            LearnState.NO_WORDS -> stringResource(R.string.no_words_in_list)
+                            LearnState.LEARNING -> stringResource(R.string.learning)
+                            LearnState.CORRECT -> stringResource(R.string.correct)
+                            LearnState.WRONG -> stringResource(R.string.try_again)
+                            LearnState.SHOW_ANSWER -> stringResource(R.string.show)
+                            LearnState.COMPLETED -> stringResource(R.string.congratulations)
                         },
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp
@@ -135,7 +137,7 @@ fun LearnScreen(
                     ) {
                         CircularProgressIndicator()
                         Spacer(modifier = Modifier.height(16.dp))
-                        Text("Loading words...")
+                        Text(stringResource(R.string.loading_word_lists))
                     }
                 }
             }
@@ -158,7 +160,7 @@ fun LearnScreen(
                     )
                     
                     Text(
-                        text = "No Words in This List",
+                        text = stringResource(R.string.no_words_in_list),
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -166,7 +168,7 @@ fun LearnScreen(
                     )
                     
                     Text(
-                        text = "This word list is empty. You need to add words before you can start learning.",
+                        text = stringResource(R.string.add_some_words),
                         style = MaterialTheme.typography.bodyLarge,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(bottom = 32.dp),
@@ -188,7 +190,7 @@ fun LearnScreen(
                             )
                         ) {
                             Text(
-                                "Back to Home",
+                                stringResource(R.string.back_to_home),
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.Medium
                             )
@@ -210,7 +212,7 @@ fun LearnScreen(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = "🎉 Congratulations! 🎉",
+                        text = stringResource(R.string.congratulations),
                         style = MaterialTheme.typography.headlineLarge,
                         fontWeight = FontWeight.Bold,
                         textAlign = TextAlign.Center,
@@ -218,7 +220,7 @@ fun LearnScreen(
                     )
                     
                     Text(
-                        text = "You've completed the learning session!",
+                        text = stringResource(R.string.you_completed),
                         style = MaterialTheme.typography.bodyLarge,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(bottom = 32.dp)
@@ -230,7 +232,7 @@ fun LearnScreen(
                             .fillMaxWidth()
                             .height(56.dp)
                     ) {
-                        Text("Back to Home")
+                        Text(stringResource(R.string.back_to_home))
                     }
                 }
             }
@@ -253,7 +255,7 @@ fun LearnScreen(
                         )
                         
                         Text(
-                            text = "${(session.progress * 100).toInt()}% completed",
+                            text = stringResource(R.string.completed_percentage, (session.progress * 100).toInt()),
                             style = MaterialTheme.typography.bodyMedium,
                             modifier = Modifier.padding(bottom = 24.dp)
                         )
@@ -276,8 +278,8 @@ fun LearnScreen(
                         ) {
                             Text(
                                 text = when (currentState) {
-                                    LearnState.SHOW_ANSWER -> "Answer:"
-                                    else -> "Question:"
+                                    LearnState.SHOW_ANSWER -> stringResource(R.string.show)
+                                    else -> stringResource(R.string.question)
                                 },
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -304,9 +306,9 @@ fun LearnScreen(
                             label = { 
                                 Text(
                                     when (selectedMode) {
-                                        LearnMode.WORD_TO_MEANING -> "Type the meaning"
-                                        LearnMode.MEANING_TO_WORD -> "Type the word"
-                                        else -> "Type your answer"
+                                        LearnMode.WORD_TO_MEANING -> stringResource(R.string.type_the_word)
+                                        LearnMode.MEANING_TO_WORD -> stringResource(R.string.type_the_word)
+                                        else -> stringResource(R.string.type_the_word)
                                     }
                                 )
                             },
@@ -328,7 +330,7 @@ fun LearnScreen(
                                 )
                             ) {
                                 Text(
-                                    text = "Correct! 🎉",
+                                    text = stringResource(R.string.correct),
                                     style = MaterialTheme.typography.titleLarge,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -349,7 +351,7 @@ fun LearnScreen(
                                 )
                             ) {
                                 Text(
-                                    text = "Wrong, try again!",
+                                    text = stringResource(R.string.incorrect),
                                     style = MaterialTheme.typography.titleLarge,
                                     fontWeight = FontWeight.Bold,
                                     color = MaterialTheme.colorScheme.onErrorContainer,
@@ -382,7 +384,7 @@ fun LearnScreen(
                                         contentDescription = null,
                                         modifier = Modifier.padding(end = 4.dp)
                                     )
-                                    Text("Skip")
+                                    Text(stringResource(R.string.skip))
                                 }
                                 
                                 // Check button
@@ -396,7 +398,7 @@ fun LearnScreen(
                                         contentDescription = null,
                                         modifier = Modifier.padding(end = 4.dp)
                                     )
-                                    Text("Check")
+                                    Text(stringResource(R.string.check))
                                 }
                                 
                                 // Show Answer button
@@ -409,7 +411,7 @@ fun LearnScreen(
                                         contentDescription = null,
                                         modifier = Modifier.padding(end = 4.dp)
                                     )
-                                    Text("Show")
+                                    Text(stringResource(R.string.show))
                                 }
                             }
                             
@@ -418,7 +420,7 @@ fun LearnScreen(
                                     onClick = { viewModel.nextWord() },
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    Text("Next Word")
+                                    Text(stringResource(R.string.next))
                                 }
                             }
                             
@@ -436,14 +438,14 @@ fun LearnScreen(
                                             contentDescription = null,
                                             modifier = Modifier.padding(end = 4.dp)
                                         )
-                                        Text("Show Answer")
+                                        Text(stringResource(R.string.show))
                                     }
                                     
                                     Button(
                                         onClick = { viewModel.retryWord() },
                                         modifier = Modifier.weight(1f)
                                     ) {
-                                        Text("Try Again")
+                                        Text(stringResource(R.string.try_again))
                                     }
                                 }
                             }
@@ -453,7 +455,7 @@ fun LearnScreen(
                                     onClick = { viewModel.nextWord() },
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    Text("Next Word")
+                                    Text(stringResource(R.string.next))
                                 }
                             }
                             

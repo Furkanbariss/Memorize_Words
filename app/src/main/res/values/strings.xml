@@ -1,3 +1,151 @@
 <resources>
     <string name="app_name">Memorize Words</string>
+    
+    <!-- Navigation -->
+    <string name="back">Back</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="info">Info</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">Word Memorizer</string>
+    <string name="welcome_message">Welcome to Word Memorizer!</string>
+    <string name="create_list">Create List</string>
+    <string name="loading_word_lists">Loading your word lists...</string>
+    <string name="available_lists">Available Lists:</string>
+    <string name="tap_to_view_words">Tap to view words</string>
+    <string name="learn">Learn</string>
+    <string name="view">View</string>
+    <string name="no_word_lists_found">No Word Lists Found</string>
+    <string name="no_lists_message">You haven\'t created any word lists yet. Create your first list to start memorizing words!</string>
+    <string name="create_your_first_list">Create Your First List</string>
+    <string name="create_new_list">Create New List</string>
+    <string name="enter_list_name">Enter list name</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_word_lists">No word lists yet</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="words">words</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">App Settings</string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="system_default">System Default</string>
+    <string name="theme_preview">Theme Preview</string>
+    <string name="features">Features</string>
+    <string name="features_description">• Create custom word lists\n• Learn words in different modes\n• Track your progress\n• Edit and manage your lists\n• Light/Dark theme support</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="app_version">App Version</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">Add Words</string>
+    <string name="word">Word</string>
+    <string name="translation">Translation</string>
+    <string name="add_word">Add Word</string>
+    <string name="save">Save</string>
+    <string name="word_added">Word added successfully!</string>
+    <string name="please_enter_word">Please enter a word</string>
+    <string name="please_enter_translation">Please enter a translation</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">Word List</string>
+    <string name="add_new_word">Add New Word</string>
+    <string name="no_words_in_list">No words in this list yet</string>
+    <string name="add_some_words">Add some words to get started!</string>
+    <string name="edit_word">Edit Word</string>
+    <string name="delete_word">Delete Word</string>
+    <string name="word_updated">Word updated successfully!</string>
+    <string name="word_deleted">Word deleted successfully!</string>
+    <string name="confirm_delete">Confirm Delete</string>
+    <string name="delete_word_confirmation">Are you sure you want to delete this word?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">Select Learning Mode</string>
+    <string name="flashcard_mode">Flashcard Mode</string>
+    <string name="quiz_mode">Quiz Mode</string>
+    <string name="typing_mode">Typing Mode</string>
+    <string name="flashcard_description">Learn words with flashcards</string>
+    <string name="quiz_description">Test your knowledge with multiple choice questions</string>
+    <string name="typing_description">Practice by typing the correct translation</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">Learning</string>
+    <string name="progress">Progress</string>
+    <string name="correct">Correct!</string>
+    <string name="incorrect">Incorrect!</string>
+    <string name="try_again">Try Again</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_completed">You completed the learning session!</string>
+    <string name="score">Score</string>
+    <string name="total_words">Total Words</string>
+    <string name="correct_answers">Correct Answers</string>
+    <string name="wrong_answers">Wrong Answers</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="restart">Restart</string>
+    <string name="question">Question:</string>
+    <string name="type_the_word">Type the word</string>
+    <string name="skip">Skip</string>
+    <string name="check">Check</string>
+    <string name="show">Show</string>
+    <string name="completed_percentage">%d%% completed</string>
+    
+    <!-- Info Screen -->
+    <string name="about">About</string>
+    <string name="app_description">A simple and effective Android app to help you memorize words and improve your vocabulary in different languages.</string>
+    <string name="version">Version</string>
+    <string name="developed_by">Developed by</string>
+    <string name="features_title">Features</string>
+    <string name="features_list">• Create custom word lists\n• Learn words in different modes\n• Track your progress\n• Edit and manage your lists\n• Light/Dark theme support\n• Multi-language support</string>
+    <string name="app_information">App Information</string>
+    <string name="personal_vocabulary_assistant">Your Personal Vocabulary Learning Assistant</string>
+    <string name="what_is_word_memorizer">What is Word Memorizer?</string>
+    <string name="what_is_word_memorizer_description">Word Memorizer is a powerful and user-friendly application designed to help you learn and remember new vocabulary words in any language. Whether you\'re studying for exams, learning a new language, or simply want to expand your vocabulary, this app provides an effective learning experience.</string>
+    <string name="key_features">Key Features</string>
+    <string name="custom_word_lists">📚 Custom Word Lists</string>
+    <string name="custom_word_lists_description">Create personalized lists for different topics, languages, or study sessions</string>
+    <string name="multiple_learning_modes">🎯 Multiple Learning Modes</string>
+    <string name="multiple_learning_modes_description">Practice words in both directions: word-to-meaning and meaning-to-word</string>
+    <string name="progress_tracking">📊 Progress Tracking</string>
+    <string name="progress_tracking_description">Monitor your learning progress with visual indicators</string>
+    <string name="easy_management">✏️ Easy Management</string>
+    <string name="easy_management_description">Add, edit, and delete words and lists with simple gestures</string>
+    <string name="flexible_learning">🔄 Flexible Learning</string>
+    <string name="flexible_learning_description">Skip difficult words and retry them later</string>
+    <string name="local_storage">💾 Local Storage</string>
+    <string name="local_storage_description">All your data is stored locally on your device</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="step_1">Create a new word list and give it a meaningful name</string>
+    <string name="step_2">Add words to your list with their meanings or translations</string>
+    <string name="step_3">Choose a learning mode and start practicing</string>
+    <string name="step_4">Review your progress and continue learning</string>
+    <string name="step_5">Edit or delete words and lists as needed</string>
+    <string name="tips_for_effective_learning">Tips for Effective Learning</string>
+    <string name="learning_tips">• Study regularly, even if just for a few minutes each day\n• Use both learning modes to strengthen your memory\n• Don\'t worry about mistakes - they\'re part of learning\n• Review completed lists periodically to maintain retention\n• Create themed lists for better organization</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">An error occurred</string>
+    <string name="network_error">Network error</string>
+    <string name="database_error">Database error</string>
+    <string name="unknown_error">Unknown error</string>
 </resources>

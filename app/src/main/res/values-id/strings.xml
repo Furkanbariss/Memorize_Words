@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Hafal Kata</string>
+    
+    <!-- Navigation -->
+    <string name="back">Kembali</string>
+    <string name="home">Beranda</string>
+    <string name="settings">Pengaturan</string>
+    <string name="info">Informasi</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">Hafal Kata</string>
+    <string name="welcome_message">Selamat Datang di Hafal Kata!</string>
+    <string name="create_list">Buat Daftar</string>
+    <string name="loading_word_lists">Memuat daftar kata Anda...</string>
+    <string name="available_lists">Daftar Tersedia:</string>
+    <string name="tap_to_view_words">Ketuk untuk melihat kata</string>
+    <string name="learn">Belajar</string>
+    <string name="view">Lihat</string>
+    <string name="no_word_lists_found">Tidak Ada Daftar Kata Ditemukan</string>
+    <string name="no_lists_message">Anda belum membuat daftar kata. Buat daftar pertama Anda untuk mulai menghafal kata!</string>
+    <string name="create_your_first_list">Buat Daftar Pertama Anda</string>
+    <string name="create_new_list">Buat Daftar Baru</string>
+    <string name="enter_list_name">Masukkan nama daftar</string>
+    <string name="create">Buat</string>
+    <string name="cancel">Batal</string>
+    <string name="no_word_lists">Belum ada daftar kata</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Hapus</string>
+    <string name="words">kata</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">Pengaturan Aplikasi</string>
+    <string name="theme">Tema</string>
+    <string name="language">Bahasa</string>
+    <string name="light_theme">Tema Terang</string>
+    <string name="dark_theme">Tema Gelap</string>
+    <string name="system_default">Default Sistem</string>
+    <string name="theme_preview">Pratinjau Tema</string>
+    <string name="features">Fitur</string>
+    <string name="features_description">• Buat daftar kata kustom\n• Belajar kata dalam mode berbeda\n• Lacak kemajuan Anda\n• Edit dan kelola daftar Anda\n• Dukungan tema terang/gelap</string>
+    <string name="back_to_home">Kembali ke Beranda</string>
+    <string name="app_version">Versi Aplikasi</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">Tambah Kata</string>
+    <string name="word">Kata</string>
+    <string name="translation">Terjemahan</string>
+    <string name="add_word">Tambah Kata</string>
+    <string name="save">Simpan</string>
+    <string name="word_added">Kata berhasil ditambahkan!</string>
+    <string name="please_enter_word">Silakan masukkan kata</string>
+    <string name="please_enter_translation">Silakan masukkan terjemahan</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">Daftar Kata</string>
+    <string name="add_new_word">Tambah Kata Baru</string>
+    <string name="no_words_in_list">Belum ada kata dalam daftar ini</string>
+    <string name="add_some_words">Tambahkan beberapa kata untuk memulai!</string>
+    <string name="edit_word">Edit Kata</string>
+    <string name="delete_word">Hapus Kata</string>
+    <string name="word_updated">Kata berhasil diperbarui!</string>
+    <string name="word_deleted">Kata berhasil dihapus!</string>
+    <string name="confirm_delete">Konfirmasi Hapus</string>
+    <string name="delete_word_confirmation">Apakah Anda yakin ingin menghapus kata ini?</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">Pilih Mode Pembelajaran</string>
+    <string name="flashcard_mode">Mode Kartu</string>
+    <string name="quiz_mode">Mode Kuis</string>
+    <string name="typing_mode">Mode Mengetik</string>
+    <string name="flashcard_description">Belajar kata dengan kartu</string>
+    <string name="quiz_description">Uji pengetahuan Anda dengan pertanyaan pilihan ganda</string>
+    <string name="typing_description">Latihan dengan mengetik terjemahan yang benar</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">Belajar</string>
+    <string name="progress">Kemajuan</string>
+    <string name="correct">Benar!</string>
+    <string name="incorrect">Salah!</string>
+    <string name="try_again">Coba Lagi</string>
+    <string name="next">Selanjutnya</string>
+    <string name="finish">Selesai</string>
+    <string name="congratulations">Selamat!</string>
+    <string name="you_completed">Anda telah menyelesaikan sesi pembelajaran!</string>
+    <string name="score">Skor</string>
+    <string name="total_words">Total Kata</string>
+    <string name="correct_answers">Jawaban Benar</string>
+    <string name="wrong_answers">Jawaban Salah</string>
+    <string name="accuracy">Akurasi</string>
+    <string name="restart">Mulai Ulang</string>
+    <string name="question">Pertanyaan:</string>
+    <string name="type_the_word">Ketik kata</string>
+    <string name="skip">Lewati</string>
+    <string name="check">Periksa</string>
+    <string name="show">Tampilkan</string>
+    <string name="completed_percentage">%%d%% selesai</string>
+    
+    <!-- Info Screen -->
+    <string name="about">Tentang</string>
+    <string name="app_description">Aplikasi Android sederhana dan efektif untuk membantu Anda menghafal kata dan meningkatkan kosakata dalam bahasa yang berbeda.</string>
+    <string name="version">Versi</string>
+    <string name="developed_by">Dikembangkan oleh</string>
+    <string name="features_title">Fitur</string>
+    <string name="features_list">• Buat daftar kata kustom\n• Belajar kata dalam mode berbeda\n• Lacak kemajuan Anda\n• Edit dan kelola daftar Anda\n• Dukungan tema terang/gelap\n• Dukungan multi-bahasa</string>
+    <string name="app_information">Informasi Aplikasi</string>
+    <string name="personal_vocabulary_assistant">Asisten Pembelajaran Kosakata Pribadi Anda</string>
+    <string name="what_is_word_memorizer">Apa itu Hafal Kata?</string>
+    <string name="what_is_word_memorizer_description">Hafal Kata adalah aplikasi yang kuat dan ramah pengguna yang dirancang untuk membantu Anda belajar dan mengingat kata kosakata baru dalam bahasa apa pun. Baik Anda belajar untuk ujian, mempelajari bahasa baru, atau hanya ingin memperluas kosakata Anda, aplikasi ini memberikan pengalaman pembelajaran yang efektif.</string>
+    <string name="key_features">Fitur Utama</string>
+    <string name="custom_word_lists">📚 Daftar Kata Kustom</string>
+    <string name="custom_word_lists_description">Buat daftar pribadi untuk topik, bahasa, atau sesi belajar yang berbeda</string>
+    <string name="multiple_learning_modes">🎯 Mode Pembelajaran Beragam</string>
+    <string name="multiple_learning_modes_description">Latihan kata dalam kedua arah: kata-ke-arti dan arti-ke-kata</string>
+    <string name="progress_tracking">📊 Pelacakan Kemajuan</string>
+    <string name="progress_tracking_description">Pantau kemajuan pembelajaran Anda dengan indikator visual</string>
+    <string name="easy_management">✏️ Manajemen Mudah</string>
+    <string name="easy_management_description">Tambah, edit, dan hapus kata serta daftar dengan gerakan sederhana</string>
+    <string name="flexible_learning">🔄 Pembelajaran Fleksibel</string>
+    <string name="flexible_learning_description">Lewati kata sulit dan coba lagi nanti</string>
+    <string name="local_storage">💾 Penyimpanan Lokal</string>
+    <string name="local_storage_description">Semua data Anda disimpan secara lokal di perangkat Anda</string>
+    <string name="how_to_use">Cara Menggunakan</string>
+    <string name="step_1">Buat daftar kata baru dan beri nama yang bermakna</string>
+    <string name="step_2">Tambahkan kata ke daftar Anda dengan arti atau terjemahannya</string>
+    <string name="step_3">Pilih mode pembelajaran dan mulai berlatih</string>
+    <string name="step_4">Tinjau kemajuan Anda dan lanjutkan belajar</string>
+    <string name="step_5">Edit atau hapus kata dan daftar sesuai kebutuhan</string>
+    <string name="tips_for_effective_learning">Tips untuk Pembelajaran yang Efektif</string>
+    <string name="learning_tips">• Belajar secara teratur, meskipun hanya beberapa menit setiap hari\n• Gunakan kedua mode pembelajaran untuk memperkuat ingatan Anda\n• Jangan khawatir tentang kesalahan - itu bagian dari pembelajaran\n• Tinjau daftar yang selesai secara berkala untuk mempertahankan retensi\n• Buat daftar bertema untuk organisasi yang lebih baik</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">Terjadi kesalahan</string>
+    <string name="network_error">Kesalahan jaringan</string>
+    <string name="database_error">Kesalahan database</string>
+    <string name="unknown_error">Kesalahan tidak diketahui</string>
+</resources>

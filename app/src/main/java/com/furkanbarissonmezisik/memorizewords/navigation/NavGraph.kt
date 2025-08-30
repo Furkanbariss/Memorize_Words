@@ -15,6 +15,7 @@ import com.furkanbarissonmezisik.memorizewords.ui.screen.LearnScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.SettingsScreen
 import com.furkanbarissonmezisik.memorizewords.ui.screen.WordListScreen
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
+import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 
 sealed class Screen(val route: String) {
     object Home : Screen("home")
@@ -36,6 +37,7 @@ sealed class Screen(val route: String) {
 fun NavGraph(
     navController: NavHostController,
     themeManager: ThemeManager,
+    languageManager: LanguageManager,
     startDestination: String = Screen.Home.route
 ) {
     // Navigation state protection
@@ -126,7 +128,8 @@ fun NavGraph(
                         navController.popBackStack()
                     }
                 },
-                themeManager = themeManager
+                themeManager = themeManager,
+                languageManager = languageManager
             )
         }
         

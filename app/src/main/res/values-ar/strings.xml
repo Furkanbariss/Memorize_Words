@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">حفظ الكلمات</string>
+    
+    <!-- Navigation -->
+    <string name="back">رجوع</string>
+    <string name="home">الرئيسية</string>
+    <string name="settings">الإعدادات</string>
+    <string name="info">معلومات</string>
+    
+    <!-- Home Screen -->
+    <string name="word_memorizer">حفظ الكلمات</string>
+    <string name="welcome_message">مرحباً بك في حفظ الكلمات!</string>
+    <string name="create_list">إنشاء قائمة</string>
+    <string name="loading_word_lists">جاري تحميل قوائم الكلمات...</string>
+    <string name="available_lists">القوائم المتاحة:</string>
+    <string name="tap_to_view_words">انقر لعرض الكلمات</string>
+    <string name="learn">تعلم</string>
+    <string name="view">عرض</string>
+    <string name="no_word_lists_found">لم يتم العثور على قوائم كلمات</string>
+    <string name="no_lists_message">لم تنشئ أي قوائم كلمات بعد. أنشئ قائمة الكلمات الأولى لتبدأ في حفظ الكلمات!</string>
+    <string name="create_your_first_list">أنشئ قائمة الكلمات الأولى</string>
+    <string name="create_new_list">إنشاء قائمة جديدة</string>
+    <string name="enter_list_name">أدخل اسم القائمة</string>
+    <string name="create">إنشاء</string>
+    <string name="cancel">إلغاء</string>
+    <string name="no_word_lists">لا توجد قوائم كلمات بعد</string>
+    <string name="edit">تحرير</string>
+    <string name="delete">حذف</string>
+    <string name="words">كلمات</string>
+    
+    <!-- Settings Screen -->
+    <string name="app_settings">إعدادات التطبيق</string>
+    <string name="theme">المظهر</string>
+    <string name="language">اللغة</string>
+    <string name="light_theme">المظهر الفاتح</string>
+    <string name="dark_theme">المظهر الداكن</string>
+    <string name="system_default">افتراضي النظام</string>
+    <string name="theme_preview">معاينة المظهر</string>
+    <string name="features">الميزات</string>
+    <string name="features_description">• إنشاء قوائم كلمات مخصصة\n• تعلم الكلمات في أوضاع مختلفة\n• تتبع تقدمك\n• تحرير وإدارة قوائمك\n• دعم المظهر الفاتح/الداكن</string>
+    <string name="back_to_home">العودة للرئيسية</string>
+    <string name="app_version">إصدار التطبيق</string>
+    
+    <!-- Add Words Screen -->
+    <string name="add_words">إضافة كلمات</string>
+    <string name="word">كلمة</string>
+    <string name="translation">ترجمة</string>
+    <string name="add_word">إضافة كلمة</string>
+    <string name="save">حفظ</string>
+    <string name="word_added">تمت إضافة الكلمة بنجاح!</string>
+    <string name="please_enter_word">يرجى إدخال كلمة</string>
+    <string name="please_enter_translation">يرجى إدخال ترجمة</string>
+    
+    <!-- Word List Screen -->
+    <string name="word_list">قائمة الكلمات</string>
+    <string name="add_new_word">إضافة كلمة جديدة</string>
+    <string name="no_words_in_list">لا توجد كلمات في هذه القائمة بعد</string>
+    <string name="add_some_words">أضف بعض الكلمات للبدء!</string>
+    <string name="edit_word">تحرير الكلمة</string>
+    <string name="delete_word">حذف الكلمة</string>
+    <string name="word_updated">تم تحديث الكلمة بنجاح!</string>
+    <string name="word_deleted">تم حذف الكلمة بنجاح!</string>
+    <string name="confirm_delete">تأكيد الحذف</string>
+    <string name="delete_word_confirmation">هل أنت متأكد من أنك تريد حذف هذه الكلمة؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    
+    <!-- Learn Mode Selection Screen -->
+    <string name="select_learning_mode">اختر وضع التعلم</string>
+    <string name="flashcard_mode">وضع البطاقات التعليمية</string>
+    <string name="quiz_mode">وضع الاختبار</string>
+    <string name="typing_mode">وضع الكتابة</string>
+    <string name="flashcard_description">تعلم الكلمات باستخدام البطاقات التعليمية</string>
+    <string name="quiz_description">اختبر معرفتك بأسئلة متعددة الخيارات</string>
+    <string name="typing_description">تدرب على كتابة الترجمة الصحيحة</string>
+    
+    <!-- Learn Screen -->
+    <string name="learning">التعلم</string>
+    <string name="progress">التقدم</string>
+    <string name="correct">صحيح!</string>
+    <string name="incorrect">خطأ!</string>
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="next">التالي</string>
+    <string name="finish">إنهاء</string>
+    <string name="congratulations">تهانينا!</string>
+    <string name="you_completed">لقد أكملت جلسة التعلم!</string>
+    <string name="score">النتيجة</string>
+    <string name="total_words">إجمالي الكلمات</string>
+    <string name="correct_answers">الإجابات الصحيحة</string>
+    <string name="wrong_answers">الإجابات الخاطئة</string>
+    <string name="accuracy">الدقة</string>
+    <string name="restart">إعادة البدء</string>
+    <string name="question">السؤال:</string>
+    <string name="type_the_word">اكتب الكلمة</string>
+    <string name="skip">تخطي</string>
+    <string name="check">تحقق</string>
+    <string name="show">عرض</string>
+    <string name="completed_percentage">%%d%% مكتمل</string>
+    
+    <!-- Info Screen -->
+    <string name="about">حول</string>
+    <string name="app_description">تطبيق أندرويد بسيط وفعال لمساعدتك في حفظ الكلمات وتحسين مفرداتك في لغات مختلفة.</string>
+    <string name="version">الإصدار</string>
+    <string name="developed_by">تم التطوير بواسطة</string>
+    <string name="features_title">الميزات</string>
+    <string name="features_list">• إنشاء قوائم كلمات مخصصة\n• تعلم الكلمات في أوضاع مختلفة\n• تتبع تقدمك\n• تحرير وإدارة قوائمك\n• دعم المظهر الفاتح/الداكن\n• دعم متعدد اللغات</string>
+    <string name="app_information">معلومات التطبيق</string>
+    <string name="personal_vocabulary_assistant">مساعدك الشخصي لتعلم المفردات</string>
+    <string name="what_is_word_memorizer">ما هو حفظ الكلمات؟</string>
+    <string name="what_is_word_memorizer_description">حفظ الكلمات هو تطبيق قوي وسهل الاستخدام مصمم لمساعدتك في تعلم وتذكر كلمات مفردات جديدة في أي لغة. سواء كنت تدرس للامتحانات، أو تتعلم لغة جديدة، أو تريد ببساطة توسيع مفرداتك، يوفر هذا التطبيق تجربة تعلم فعالة.</string>
+    <string name="key_features">الميزات الرئيسية</string>
+    <string name="custom_word_lists">📚 قوائم كلمات مخصصة</string>
+    <string name="custom_word_lists_description">أنشئ قوائم مخصصة لمواضيع مختلفة، أو لغات، أو جلسات دراسة</string>
+    <string name="multiple_learning_modes">🎯 أوضاع تعلم متعددة</string>
+    <string name="multiple_learning_modes_description">تدرب على الكلمات في كلا الاتجاهين: من الكلمة إلى المعنى ومن المعنى إلى الكلمة</string>
+    <string name="progress_tracking">📊 تتبع التقدم</string>
+    <string name="progress_tracking_description">راقب تقدم تعلمك بمؤشرات بصرية</string>
+    <string name="easy_management">✏️ إدارة سهلة</string>
+    <string name="easy_management_description">أضف، وحرر، واحذف الكلمات والقوائم بحركات بسيطة</string>
+    <string name="flexible_learning">🔄 تعلم مرن</string>
+    <string name="flexible_learning_description">تخطى الكلمات الصعبة وجربها لاحقاً</string>
+    <string name="local_storage">💾 تخزين محلي</string>
+    <string name="local_storage_description">جميع بياناتك مخزنة محلياً على جهازك</string>
+    <string name="how_to_use">كيفية الاستخدام</string>
+    <string name="step_1">أنشئ قائمة كلمات جديدة وأعطها اسماً ذا معنى</string>
+    <string name="step_2">أضف كلمات إلى قائمتك مع معانيها أو ترجماتها</string>
+    <string name="step_3">اختر وضع تعلم وابدأ التدريب</string>
+    <string name="step_4">راجع تقدمك واستمر في التعلم</string>
+    <string name="step_5">حرر أو احذف الكلمات والقوائم حسب الحاجة</string>
+    <string name="tips_for_effective_learning">نصائح للتعلم الفعال</string>
+    <string name="learning_tips">• ادرس بانتظام، حتى لو لبضع دقائق كل يوم\n• استخدم كلا وضعي التعلم لتقوية ذاكرتك\n• لا تقلق بشأن الأخطاء - إنها جزء من التعلم\n• راجع القوائم المكتملة دورياً للحفاظ على الاستبقاء\n• أنشئ قوائم مواضيعية لتنظيم أفضل</string>
+    
+    <!-- Language Names -->
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Bahasa Indonesia</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_hindi">हिन्दी</string>
+    <string name="language_portuguese">Português</string>
+    <string name="language_french">Français</string>
+    <string name="language_russian">Русский</string>
+    <string name="language_bengali">বাংলা</string>
+    
+    <!-- Error Messages -->
+    <string name="error_occurred">حدث خطأ</string>
+    <string name="network_error">خطأ في الشبكة</string>
+    <string name="database_error">خطأ في قاعدة البيانات</string>
+    <string name="unknown_error">خطأ غير معروف</string>
+</resources>
