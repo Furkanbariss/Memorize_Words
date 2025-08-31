@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -322,23 +323,59 @@ fun SettingsScreen(
                             )
                         }
                         
-                        // Language options
-                        Column {
-                            languageManager.getAvailableLanguages().forEach { language ->
-                                Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(vertical = 8.dp),
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
-                                    RadioButton(
-                                        selected = languageManager.currentLanguage == language,
-                                        onClick = { languageManager.setLanguage(language) }
-                                    )
-                                    Spacer(modifier = Modifier.width(8.dp))
-                                    Text(
-                                        text = languageManager.getLanguageDisplayName(language),
-                                        style = MaterialTheme.typography.bodyMedium
+                        // Compact language dropdown
+                        var expanded by remember { mutableStateOf(false) }
+                        
+                        Text(
+                            text = stringResource(R.string.language_selection_description),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
+                        
+                        ExposedDropdownMenuBox(
+                            expanded = expanded,
+                            onExpandedChange = { expanded = !expanded }
+                        ) {
+                            OutlinedTextField(
+                                value = languageManager.getLanguageDisplayName(languageManager.currentLanguage),
+                                onValueChange = {},
+                                readOnly = true,
+                                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .menuAnchor(),
+                                colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
+                                textStyle = MaterialTheme.typography.bodyMedium,
+                                singleLine = true
+                            )
+                            
+                            ExposedDropdownMenu(
+                                expanded = expanded,
+                                onDismissRequest = { expanded = false }
+                            ) {
+                                languageManager.getAvailableLanguages().forEach { language ->
+                                    DropdownMenuItem(
+                                        text = { 
+                                            Text(
+                                                text = languageManager.getLanguageDisplayName(language),
+                                                style = MaterialTheme.typography.bodyMedium
+                                            )
+                                        },
+                                        onClick = {
+                                            languageManager.setLanguage(language)
+                                            expanded = false
+                                        },
+                                        leadingIcon = {
+                                            if (languageManager.currentLanguage == language) {
+                                                Icon(
+                                                    imageVector = Icons.Default.Star,
+                                                    contentDescription = null,
+                                                    tint = MaterialTheme.colorScheme.primary,
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            }
+                                        }
                                     )
                                 }
                             }

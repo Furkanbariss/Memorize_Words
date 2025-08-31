@@ -32,6 +32,7 @@
     <string name="app_settings">Uygulama Ayarları</string>
     <string name="theme">Tema</string>
     <string name="language">Dil</string>
+    <string name="language_selection_description">Tercih ettiğiniz dili seçin</string>
     <string name="light_theme">Açık Tema</string>
     <string name="dark_theme">Koyu Tema</string>
     <string name="system_default">Sistem Varsayılanı</string>

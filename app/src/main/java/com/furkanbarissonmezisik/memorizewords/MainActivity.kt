@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.OnBackPressedCallback
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -97,13 +98,16 @@ class MainActivity : ComponentActivity() {
         }
     }
     
-    // Override back press to prevent rapid back button presses
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        // Prevent rapid back button presses
-        if (!isFinishing) {
-            super.onBackPressed()
-        }
+    // Modern back press handling using OnBackPressedDispatcher
+    init {
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Prevent rapid back button presses
+                if (!isFinishing) {
+                    finish()
+                }
+            }
+        })
     }
 }
 
