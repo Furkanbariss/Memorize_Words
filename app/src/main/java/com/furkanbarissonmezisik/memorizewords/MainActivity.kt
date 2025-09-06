@@ -22,8 +22,6 @@ import com.furkanbarissonmezisik.memorizewords.ui.theme.MemorizeWordsTheme
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.AppLanguage
-import com.furkanbarissonmezisik.memorizewords.ui.theme.BackgroundManager
-import com.furkanbarissonmezisik.memorizewords.ui.theme.BackgroundType
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
@@ -37,36 +35,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             val themeManager = remember { ThemeManager(this) }
             val languageManager = remember { LanguageManager(this) }
-            val backgroundManager = remember { BackgroundManager(this) }
             
-            MemorizeWordsTheme(themeManager = themeManager, backgroundManager = backgroundManager) {
-                val backgroundColor = backgroundManager.getBackgroundColor()
-                if (backgroundColor != null) {
-                    // Use background color modifier
-                    Surface(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(backgroundColor),
-                        color = Color.Transparent
-                    ) {
-                        WordMemorizerApp(
-                            themeManager = themeManager,
-                            languageManager = languageManager,
-                            backgroundManager = backgroundManager
-                        )
-                    }
-                } else {
-                    // No background, use theme background
-                    Surface(
-                        modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colorScheme.background
-                    ) {
-                        WordMemorizerApp(
-                            themeManager = themeManager,
-                            languageManager = languageManager,
-                            backgroundManager = backgroundManager
-                        )
-                    }
+            MemorizeWordsTheme(themeManager = themeManager) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    WordMemorizerApp(
+                        themeManager = themeManager,
+                        languageManager = languageManager
+                    )
                 }
             }
         }
@@ -136,8 +114,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WordMemorizerApp(
     themeManager: ThemeManager,
-    languageManager: LanguageManager,
-    backgroundManager: BackgroundManager
+    languageManager: LanguageManager
 ) {
     val navController = rememberNavController()
     
@@ -163,7 +140,6 @@ fun WordMemorizerApp(
     NavGraph(
         navController = navController, 
         themeManager = themeManager,
-        languageManager = languageManager,
-        backgroundManager = backgroundManager
+        languageManager = languageManager
     )
 }

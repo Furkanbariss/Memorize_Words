@@ -67,7 +67,6 @@ fun MemorizeWordsTheme(
 @Composable
 fun MemorizeWordsTheme(
     themeManager: ThemeManager,
-    backgroundManager: BackgroundManager? = null,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
