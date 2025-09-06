@@ -52,10 +52,10 @@ class LanguageManager(private val context: Context) {
     }
     
     private fun restartActivity(activity: Activity) {
-        val intent = Intent(activity, activity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        activity.startActivity(intent)
+        val intent = activity.intent
         activity.finish()
+        activity.startActivity(intent)
+        // Remove deprecated overridePendingTransition
     }
     
     fun getCurrentLocale(): Locale {

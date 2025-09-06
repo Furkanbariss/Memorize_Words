@@ -20,6 +20,37 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 
+private fun createDarkColorScheme(paletteColors: PaletteColors) = darkColorScheme(
+    primary = paletteColors.primary,
+    secondary = paletteColors.secondary,
+    tertiary = paletteColors.tertiary,
+    background = DarkBackground,
+    surface = DarkSurface,
+    surfaceVariant = paletteColors.surface.copy(alpha = 0.12f),
+    onBackground = DarkOnBackground,
+    onSurface = DarkOnSurface,
+    primaryContainer = paletteColors.primaryVariant,
+    onPrimaryContainer = Color.White,
+    secondaryContainer = paletteColors.accent,
+    onSecondaryContainer = Color.White
+)
+
+private fun createLightColorScheme(paletteColors: PaletteColors) = lightColorScheme(
+    primary = paletteColors.primary,
+    secondary = paletteColors.secondary,
+    tertiary = paletteColors.tertiary,
+    background = LightBackground,
+    surface = LightSurface,
+    surfaceVariant = paletteColors.surface,
+    onBackground = LightOnBackground,
+    onSurface = LightOnSurface,
+    primaryContainer = paletteColors.primaryVariant,
+    onPrimaryContainer = Color.White,
+    secondaryContainer = paletteColors.accent,
+    onSecondaryContainer = Color.Black
+)
+
+// Backward compatibility
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,
@@ -68,7 +99,7 @@ fun MemorizeWordsTheme(
 fun MemorizeWordsTheme(
     themeManager: ThemeManager,
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false, // Disabled by default to use custom palettes
     content: @Composable () -> Unit
 ) {
     val darkTheme = when (themeManager.currentThemeMode) {
@@ -77,14 +108,16 @@ fun MemorizeWordsTheme(
         ThemeMode.SYSTEM -> isSystemInDarkTheme()
     }
     
+    val paletteColors = getColorsForPalette(themeManager.currentColorPalette)
+    
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> createDarkColorScheme(paletteColors)
+        else -> createLightColorScheme(paletteColors)
     }
 
     MaterialTheme(

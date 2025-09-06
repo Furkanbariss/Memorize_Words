@@ -1,6 +1,7 @@
 package com.furkanbarissonmezisik.memorizewords.ui.screen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
@@ -106,8 +107,8 @@ fun LearnScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Transparent,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    titleContentColor = MaterialTheme.colorScheme.onBackground,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onBackground
                 )
             )
         }
@@ -379,7 +380,12 @@ fun LearnScreen(
                                 // Skip button
                                 OutlinedButton(
                                     onClick = { viewModel.skipWord() },
-                                    modifier = Modifier.weight(1f)
+                                    modifier = Modifier.weight(1f),
+                                    colors = ButtonDefaults.outlinedButtonColors(
+                                        contentColor = Color.Red,
+                                        containerColor = Color.Transparent
+                                    ),
+                                    border = BorderStroke(1.dp, Color.Red)
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Close,
@@ -393,7 +399,11 @@ fun LearnScreen(
                                 Button(
                                     onClick = { viewModel.checkAnswer() },
                                     modifier = Modifier.weight(1f),
-                                    enabled = userInput.isNotBlank()
+                                    enabled = userInput.isNotBlank(),
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = Color(0xFF4CAF50), // Green
+                                        contentColor = Color.White
+                                    )
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Check,
@@ -406,7 +416,12 @@ fun LearnScreen(
                                 // Show Answer button
                                 OutlinedButton(
                                     onClick = { viewModel.showAnswer() },
-                                    modifier = Modifier.weight(1f)
+                                    modifier = Modifier.weight(1f),
+                                    colors = ButtonDefaults.outlinedButtonColors(
+                                        contentColor = Color(0xFFFFC107), // Yellow/Amber
+                                        containerColor = Color.Transparent
+                                    ),
+                                    border = BorderStroke(1.dp, Color(0xFFFFC107))
                                 ) {
                                     Icon(
                                         imageVector = Icons.Default.Info,
@@ -433,7 +448,12 @@ fun LearnScreen(
                                 ) {
                                     OutlinedButton(
                                         onClick = { viewModel.showAnswer() },
-                                        modifier = Modifier.weight(1f)
+                                        modifier = Modifier.weight(1f),
+                                        colors = ButtonDefaults.outlinedButtonColors(
+                                            contentColor = Color(0xFFFFC107), // Yellow/Amber
+                                            containerColor = Color.Transparent
+                                        ),
+                                        border = BorderStroke(1.dp, Color(0xFFFFC107))
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.Info,

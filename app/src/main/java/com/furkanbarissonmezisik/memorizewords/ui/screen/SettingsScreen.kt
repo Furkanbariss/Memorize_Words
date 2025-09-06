@@ -33,6 +33,8 @@ import com.furkanbarissonmezisik.memorizewords.ui.theme.Purple40
 import com.furkanbarissonmezisik.memorizewords.ui.theme.Purple80
 import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.AppLanguage
+import com.furkanbarissonmezisik.memorizewords.ui.theme.ColorPalette
+import com.furkanbarissonmezisik.memorizewords.ui.theme.getColorsForPalette
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -69,8 +71,8 @@ fun SettingsScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color.Transparent,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    titleContentColor = MaterialTheme.colorScheme.onBackground,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onBackground
                 )
             )
         }
@@ -283,6 +285,155 @@ fun SettingsScreen(
                                                 color = Purple80,
                                                 shape = CircleShape
                                             )
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // Color Palette Selection Card
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant
+                    )
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.padding(end = 16.dp)
+                            )
+                            
+                            Text(
+                                text = "Color Palette",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Medium
+                            )
+                        }
+                        
+                        // Color palette dropdown
+                        var paletteExpanded by remember { mutableStateOf(false) }
+                        
+                        Text(
+                            text = "Choose your preferred color theme",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
+                        
+                        ExposedDropdownMenuBox(
+                            expanded = paletteExpanded,
+                            onExpandedChange = { paletteExpanded = !paletteExpanded }
+                        ) {
+                            OutlinedTextField(
+                                value = themeManager.getColorPaletteDisplayName(themeManager.currentColorPalette),
+                                onValueChange = {},
+                                readOnly = true,
+                                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = paletteExpanded) },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .menuAnchor(),
+                                colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
+                                textStyle = MaterialTheme.typography.bodyMedium,
+                                singleLine = true
+                            )
+                            
+                            ExposedDropdownMenu(
+                                expanded = paletteExpanded,
+                                onDismissRequest = { paletteExpanded = false }
+                            ) {
+                                themeManager.getAvailableColorPalettes().forEach { palette ->
+                                    DropdownMenuItem(
+                                        text = { 
+                                            Text(
+                                                text = themeManager.getColorPaletteDisplayName(palette),
+                                                style = MaterialTheme.typography.bodyMedium
+                                            )
+                                        },
+                                        onClick = {
+                                            themeManager.setColorPalette(palette)
+                                            paletteExpanded = false
+                                        },
+                                        leadingIcon = {
+                                            if (themeManager.currentColorPalette == palette) {
+                                                Icon(
+                                                    imageVector = Icons.Default.Star,
+                                                    contentDescription = null,
+                                                    tint = MaterialTheme.colorScheme.primary,
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            }
+                                        },
+                                        trailingIcon = {
+                                            // Color preview circle
+                                            val paletteColors = getColorsForPalette(palette)
+                                            Box(
+                                                modifier = Modifier
+                                                    .size(20.dp)
+                                                    .background(
+                                                        color = paletteColors.primary,
+                                                        shape = CircleShape
+                                                    )
+                                            )
+                                        }
+                                    )
+                                }
+                            }
+                        }
+                        
+                        // Color palette preview section
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text(
+                            text = "Color Preview",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.Medium,
+                            modifier = Modifier.padding(bottom = 8.dp)
+                        )
+                        
+                        // Current palette preview
+                        val currentPaletteColors = getColorsForPalette(themeManager.currentColorPalette)
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceEvenly
+                        ) {
+                            listOf(
+                                "Primary" to currentPaletteColors.primary,
+                                "Secondary" to currentPaletteColors.secondary,
+                                "Tertiary" to currentPaletteColors.tertiary,
+                                "Accent" to currentPaletteColors.accent
+                            ).forEach { (name, color) ->
+                                Column(
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(32.dp)
+                                            .background(
+                                                color = color,
+                                                shape = CircleShape
+                                            )
+                                    )
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Text(
+                                        text = name,
+                                        style = MaterialTheme.typography.labelSmall,
+                                        textAlign = TextAlign.Center
                                     )
                                 }
                             }

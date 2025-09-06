@@ -14,6 +14,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
@@ -28,23 +30,42 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Apply stored language before setting content
-        applyStoredLanguage()
-        
         enableEdgeToEdge()
         setContent {
             val themeManager = remember { ThemeManager(this) }
             val languageManager = remember { LanguageManager(this) }
             
-            MemorizeWordsTheme(themeManager = themeManager) {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    WordMemorizerApp(
-                        themeManager = themeManager,
-                        languageManager = languageManager
-                    )
+            // Create a locale-aware context
+            val localeAwareContext = remember(languageManager.currentLanguage) {
+                val prefs = getSharedPreferences("language_preferences", Context.MODE_PRIVATE)
+                val storedLanguageCode = prefs.getString("app_language", AppLanguage.ENGLISH.code)
+                val language = AppLanguage.values().find { it.code == storedLanguageCode } ?: AppLanguage.ENGLISH
+                
+                val locale = createLocale(language.code)
+                val config = android.content.res.Configuration(resources.configuration)
+                config.setLocale(locale)
+                
+                createConfigurationContext(config)
+            }
+            
+            // Force locale update on composition
+            LaunchedEffect(Unit) {
+                val currentLocale = languageManager.getCurrentLocale()
+                Locale.setDefault(currentLocale)
+            }
+            
+            // Provide the locale-aware context to Compose
+            CompositionLocalProvider(LocalContext provides localeAwareContext) {
+                MemorizeWordsTheme(themeManager = themeManager) {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        WordMemorizerApp(
+                            themeManager = themeManager,
+                            languageManager = languageManager
+                        )
+                    }
                 }
             }
         }
@@ -55,30 +76,22 @@ class MainActivity : ComponentActivity() {
         super.attachBaseContext(context)
     }
     
-    private fun applyStoredLanguage() {
-        val prefs = getSharedPreferences("language_preferences", Context.MODE_PRIVATE)
-        val storedLanguageCode = prefs.getString("app_language", AppLanguage.ENGLISH.code)
-        val language = AppLanguage.values().find { it.code == storedLanguageCode } ?: AppLanguage.ENGLISH
-        
-        val locale = createLocale(language.code)
-        Locale.setDefault(locale)
-        
-        val config = Configuration(resources.configuration)
-        config.setLocale(locale)
-        
-        createConfigurationContext(config)
-    }
     
     private fun updateBaseContextLocale(context: Context): Context {
         val prefs = context.getSharedPreferences("language_preferences", Context.MODE_PRIVATE)
         val storedLanguageCode = prefs.getString("app_language", AppLanguage.ENGLISH.code)
         val language = AppLanguage.values().find { it.code == storedLanguageCode } ?: AppLanguage.ENGLISH
         
+        android.util.Log.d("MainActivity", "updateBaseContextLocale: storedLanguageCode=$storedLanguageCode, language=$language")
+        
         val locale = createLocale(language.code)
         val config = Configuration(context.resources.configuration)
         config.setLocale(locale)
         
-        return context.createConfigurationContext(config)
+        val newContext = context.createConfigurationContext(config)
+        android.util.Log.d("MainActivity", "updateBaseContextLocale: new context locale=${newContext.resources.configuration.locales[0]}")
+        
+        return newContext
     }
     
     private fun createLocale(languageCode: String): Locale {
@@ -121,6 +134,10 @@ fun WordMemorizerApp(
     // Monitor language changes and restart activity when language changes
     LaunchedEffect(languageManager.currentLanguage) {
         // This will trigger recomposition when language changes
+        // Force recreation when language changes
+        if (languageManager.currentLanguage != AppLanguage.ENGLISH) {
+            // Activity should already be restarting via LanguageManager
+        }
     }
     
     // Add navigation state protection

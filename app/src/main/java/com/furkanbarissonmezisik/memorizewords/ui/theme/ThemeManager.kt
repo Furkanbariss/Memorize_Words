@@ -19,9 +19,17 @@ class ThemeManager(context: Context) {
     var currentThemeMode by mutableStateOf(getStoredThemeMode())
         private set
     
+    var currentColorPalette by mutableStateOf(getStoredColorPalette())
+        private set
+    
     fun setThemeMode(themeMode: ThemeMode) {
         currentThemeMode = themeMode
         prefs.edit().putString("theme_mode", themeMode.name).apply()
+    }
+    
+    fun setColorPalette(palette: ColorPalette) {
+        currentColorPalette = palette
+        prefs.edit().putString("color_palette", palette.name).apply()
     }
     
     private fun getStoredThemeMode(): ThemeMode {
@@ -30,6 +38,15 @@ class ThemeManager(context: Context) {
             ThemeMode.valueOf(storedTheme ?: ThemeMode.SYSTEM.name)
         } catch (e: IllegalArgumentException) {
             ThemeMode.SYSTEM
+        }
+    }
+    
+    private fun getStoredColorPalette(): ColorPalette {
+        val storedPalette = prefs.getString("color_palette", ColorPalette.PURPLE_GRADIENT.name)
+        return try {
+            ColorPalette.valueOf(storedPalette ?: ColorPalette.PURPLE_GRADIENT.name)
+        } catch (e: IllegalArgumentException) {
+            ColorPalette.PURPLE_GRADIENT
         }
     }
     
@@ -44,5 +61,21 @@ class ThemeManager(context: Context) {
     private fun isSystemInDarkTheme(): Boolean {
         // This will be handled by the system theme detection in the Theme composable
         return false // Default value, actual detection happens in Theme.kt
+    }
+    
+    fun getColorPaletteDisplayName(palette: ColorPalette): String {
+        return when (palette) {
+            ColorPalette.PURPLE_GRADIENT -> "Purple Gradient"
+            ColorPalette.WARM_SUNSET -> "Warm Sunset"
+            ColorPalette.BLUE_ORANGE_CONTRAST -> "Blue Orange Contrast"
+            ColorPalette.PURPLE_GREEN_VIBRANT -> "Purple Green Vibrant"
+            ColorPalette.MAROON_TEAL -> "Maroon Teal"
+            ColorPalette.WARM_EARTHY -> "Warm Earthy"
+            ColorPalette.MONOCHROME_GREY -> "Monochrome Grey"
+        }
+    }
+    
+    fun getAvailableColorPalettes(): List<ColorPalette> {
+        return ColorPalette.values().toList()
     }
 }

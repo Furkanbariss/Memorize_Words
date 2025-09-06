@@ -32,6 +32,7 @@
     <string name="app_settings">Pengaturan Aplikasi</string>
     <string name="theme">Tema</string>
     <string name="language">Bahasa</string>
+    <string name="language_selection_description">Pilih bahasa yang Anda inginkan</string>
     <string name="light_theme">Tema Terang</string>
     <string name="dark_theme">Tema Gelap</string>
     <string name="system_default">Default Sistem</string>
