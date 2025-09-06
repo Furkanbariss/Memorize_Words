@@ -37,6 +37,14 @@
     <string name="dark_theme">Koyu Tema</string>
     <string name="system_default">Sistem Varsayılanı</string>
     <string name="theme_preview">Tema Önizlemesi</string>
+    <string name="background">Arka Plan</string>
+    <string name="background_selection_description">Tercih ettiğiniz arka planı seçin</string>
+    <string name="no_background">Arka Plan Yok</string>
+    <string name="colorful_letters">Renkli Harfler</string>
+    <string name="light_letters">Açık Harfler</string>
+    <string name="dark_tech">Koyu Teknoloji</string>
+    <string name="educational_icons">Eğitimsel İkonlar</string>
+    <string name="background_preview">Arka Plan Önizlemesi</string>
     <string name="features">Özellikler</string>
     <string name="features_description">• Özel kelime listeleri oluşturun\n• Farklı modlarda kelime öğrenin\n• İlerlemenizi takip edin\n• Listelerinizi düzenleyin ve yönetin\n• Açık/Koyu tema desteği</string>
     <string name="back_to_home">Ana Sayfaya Dön</string>

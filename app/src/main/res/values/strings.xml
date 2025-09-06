@@ -37,6 +37,14 @@
     <string name="dark_theme">Dark Theme</string>
     <string name="system_default">System Default</string>
     <string name="theme_preview">Theme Preview</string>
+    <string name="background">Background</string>
+    <string name="background_selection_description">Select your preferred background</string>
+    <string name="no_background">No Background</string>
+    <string name="colorful_letters">Colorful Letters</string>
+    <string name="light_letters">Light Letters</string>
+    <string name="dark_tech">Dark Tech</string>
+    <string name="educational_icons">Educational Icons</string>
+    <string name="background_preview">Background Preview</string>
     <string name="features">Features</string>
     <string name="features_description">• Create custom word lists\n• Learn words in different modes\n• Track your progress\n• Edit and manage your lists\n• Light/Dark theme support</string>
     <string name="back_to_home">Back to Home</string>

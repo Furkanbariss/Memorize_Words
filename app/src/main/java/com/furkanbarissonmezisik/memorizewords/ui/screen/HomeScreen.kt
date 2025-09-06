@@ -21,6 +21,7 @@ import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModel
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModelFactory
 import androidx.compose.ui.res.stringResource
 import com.furkanbarissonmezisik.memorizewords.R
+import com.furkanbarissonmezisik.memorizewords.ui.components.AdMobBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -250,6 +251,11 @@ fun HomeScreen(
                     }
                 }
             }
+            
+            // AdMob Banner at the bottom
+            AdMobBanner(
+                modifier = Modifier.padding(top = 16.dp)
+            )
         }
     }
     

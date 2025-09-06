@@ -22,6 +22,7 @@ import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnMode
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnState
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnViewModel
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnViewModelFactory
+import com.furkanbarissonmezisik.memorizewords.ui.components.AdMobBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -462,6 +463,11 @@ fun LearnScreen(
                             else -> {}
                         }
                     }
+                    
+                    // AdMob Banner at the bottom
+                    AdMobBanner(
+                        modifier = Modifier.padding(top = 16.dp)
+                    )
                 }
             }
         }

@@ -8,12 +8,16 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.OnBackPressedCallback
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.rememberNavController
 import com.furkanbarissonmezisik.memorizewords.data.AppDatabase
 import com.furkanbarissonmezisik.memorizewords.data.repository.WordRepository
@@ -22,6 +26,8 @@ import com.furkanbarissonmezisik.memorizewords.ui.theme.MemorizeWordsTheme
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.AppLanguage
+import com.furkanbarissonmezisik.memorizewords.ui.theme.BackgroundManager
+import com.furkanbarissonmezisik.memorizewords.ui.theme.BackgroundType
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
@@ -35,16 +41,55 @@ class MainActivity : ComponentActivity() {
         setContent {
             val themeManager = remember { ThemeManager(this) }
             val languageManager = remember { LanguageManager(this) }
+            val backgroundManager = remember { BackgroundManager(this) }
             
-            MemorizeWordsTheme(themeManager = themeManager) {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    WordMemorizerApp(
-                        themeManager = themeManager,
-                        languageManager = languageManager
-                    )
+            MemorizeWordsTheme(themeManager = themeManager, backgroundManager = backgroundManager) {
+                if (backgroundManager.currentBackgroundType != BackgroundType.NONE) {
+                    val backgroundResourceId = backgroundManager.getBackgroundResourceId()
+                    if (backgroundResourceId != null) {
+                        Box(modifier = Modifier.fillMaxSize()) {
+                            // Background image
+                            androidx.compose.foundation.Image(
+                                painter = androidx.compose.ui.res.painterResource(id = backgroundResourceId),
+                                contentDescription = null,
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = androidx.compose.ui.layout.ContentScale.Crop
+                            )
+                            // Content
+                            Surface(
+                                modifier = Modifier.fillMaxSize(),
+                                color = androidx.compose.ui.graphics.Color.Transparent
+                            ) {
+                                WordMemorizerApp(
+                                    themeManager = themeManager,
+                                    languageManager = languageManager,
+                                    backgroundManager = backgroundManager
+                                )
+                            }
+                        }
+                    } else {
+                        Surface(
+                            modifier = Modifier.fillMaxSize(),
+                            color = MaterialTheme.colorScheme.background
+                        ) {
+                            WordMemorizerApp(
+                                themeManager = themeManager,
+                                languageManager = languageManager,
+                                backgroundManager = backgroundManager
+                            )
+                        }
+                    }
+                } else {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        WordMemorizerApp(
+                            themeManager = themeManager,
+                            languageManager = languageManager,
+                            backgroundManager = backgroundManager
+                        )
+                    }
                 }
             }
         }
@@ -114,7 +159,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WordMemorizerApp(
     themeManager: ThemeManager,
-    languageManager: LanguageManager
+    languageManager: LanguageManager,
+    backgroundManager: BackgroundManager
 ) {
     val navController = rememberNavController()
     
@@ -140,6 +186,7 @@ fun WordMemorizerApp(
     NavGraph(
         navController = navController, 
         themeManager = themeManager,
-        languageManager = languageManager
+        languageManager = languageManager,
+        backgroundManager = backgroundManager
     )
 }

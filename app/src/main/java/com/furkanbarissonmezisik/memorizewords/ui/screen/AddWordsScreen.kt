@@ -20,6 +20,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModel
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.HomeViewModelFactory
+import com.furkanbarissonmezisik.memorizewords.ui.components.AdMobBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -250,6 +251,11 @@ fun AddWordsScreen(
                 }
             }
         }
+        
+        // AdMob Banner at the bottom
+        AdMobBanner(
+            modifier = Modifier.padding(top = 16.dp)
+        )
     }
     
     // Create new list dialog

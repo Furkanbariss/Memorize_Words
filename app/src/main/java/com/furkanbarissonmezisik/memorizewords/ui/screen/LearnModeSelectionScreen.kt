@@ -14,6 +14,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.LearnMode
+import com.furkanbarissonmezisik.memorizewords.ui.components.AdMobBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -140,6 +141,11 @@ fun LearnModeSelectionScreen(
                     }
                 }
             }
+            
+            // AdMob Banner at the bottom
+            AdMobBanner(
+                modifier = Modifier.padding(top = 16.dp)
+            )
         }
     }
 }
