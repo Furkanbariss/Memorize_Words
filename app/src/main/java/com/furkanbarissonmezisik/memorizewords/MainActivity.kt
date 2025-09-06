@@ -8,7 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.OnBackPressedCallback
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.background
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -16,11 +16,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.rememberNavController
-import com.furkanbarissonmezisik.memorizewords.data.AppDatabase
-import com.furkanbarissonmezisik.memorizewords.data.repository.WordRepository
 import com.furkanbarissonmezisik.memorizewords.navigation.NavGraph
 import com.furkanbarissonmezisik.memorizewords.ui.theme.MemorizeWordsTheme
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
@@ -44,42 +40,23 @@ class MainActivity : ComponentActivity() {
             val backgroundManager = remember { BackgroundManager(this) }
             
             MemorizeWordsTheme(themeManager = themeManager, backgroundManager = backgroundManager) {
-                if (backgroundManager.currentBackgroundType != BackgroundType.NONE) {
-                    val backgroundResourceId = backgroundManager.getBackgroundResourceId()
-                    if (backgroundResourceId != null) {
-                        Box(modifier = Modifier.fillMaxSize()) {
-                            // Background image
-                            androidx.compose.foundation.Image(
-                                painter = androidx.compose.ui.res.painterResource(id = backgroundResourceId),
-                                contentDescription = null,
-                                modifier = Modifier.fillMaxSize(),
-                                contentScale = androidx.compose.ui.layout.ContentScale.Crop
-                            )
-                            // Content
-                            Surface(
-                                modifier = Modifier.fillMaxSize(),
-                                color = androidx.compose.ui.graphics.Color.Transparent
-                            ) {
-                                WordMemorizerApp(
-                                    themeManager = themeManager,
-                                    languageManager = languageManager,
-                                    backgroundManager = backgroundManager
-                                )
-                            }
-                        }
-                    } else {
-                        Surface(
-                            modifier = Modifier.fillMaxSize(),
-                            color = MaterialTheme.colorScheme.background
-                        ) {
-                            WordMemorizerApp(
-                                themeManager = themeManager,
-                                languageManager = languageManager,
-                                backgroundManager = backgroundManager
-                            )
-                        }
+                val backgroundColor = backgroundManager.getBackgroundColor()
+                if (backgroundColor != null) {
+                    // Use background color modifier
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(backgroundColor),
+                        color = Color.Transparent
+                    ) {
+                        WordMemorizerApp(
+                            themeManager = themeManager,
+                            languageManager = languageManager,
+                            backgroundManager = backgroundManager
+                        )
                     }
                 } else {
+                    // No background, use theme background
                     Surface(
                         modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background

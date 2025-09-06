@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
 import com.furkanbarissonmezisik.memorizewords.R
 
 enum class BackgroundType {
@@ -49,6 +50,16 @@ class BackgroundManager(context: Context) {
             }
         } catch (e: Exception) {
             null
+        }
+    }
+    
+    fun getBackgroundColor(): Color? {
+        return when (currentBackgroundType) {
+            BackgroundType.NONE -> null
+            BackgroundType.COLORFUL_LETTERS -> Color(0xFFE3F2FD) // Light blue
+            BackgroundType.LIGHT_LETTERS -> Color(0xFFFEFEFE) // Almost white
+            BackgroundType.DARK_TECH -> Color(0xFF0A0A0A) // Very dark
+            BackgroundType.EDUCATIONAL_ICONS -> Color(0xFFF5F0E6) // Light cream
         }
     }
     

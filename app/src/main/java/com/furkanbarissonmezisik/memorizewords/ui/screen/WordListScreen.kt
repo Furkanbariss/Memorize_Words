@@ -19,6 +19,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.WordListViewModel
 import com.furkanbarissonmezisik.memorizewords.ui.viewmodel.WordListViewModelFactory
+import com.furkanbarissonmezisik.memorizewords.ui.components.AdMobBanner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -74,6 +75,13 @@ fun WordListScreen(
                     navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
+        },
+        bottomBar = {
+            // AdMob Banner with padding to avoid system navigation bar
+            Column {
+                AdMobBanner()
+                Spacer(modifier = Modifier.height(80.dp)) // Extra space for navigation bar
+            }
         },
         floatingActionButton = {
             FloatingActionButton(

@@ -88,6 +88,13 @@ fun AddWordsScreen(
                 )
             )
         },
+        bottomBar = {
+            // AdMob Banner with padding to avoid system navigation bar
+            Column {
+                AdMobBanner()
+                Spacer(modifier = Modifier.height(80.dp)) // Extra space for navigation bar
+            }
+        },
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { showCreateListDialog = true },
@@ -251,11 +258,6 @@ fun AddWordsScreen(
                 }
             }
         }
-        
-        // AdMob Banner at the bottom
-        AdMobBanner(
-            modifier = Modifier.padding(top = 16.dp)
-        )
     }
     
     // Create new list dialog
