@@ -143,6 +143,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">لوحة الألوان</string>
+    <string name="color_palette_description">اختر سمة الألوان المفضلة لديك</string>
+    <string name="purple_gradient">تدرج بنفسجي</string>
+    <string name="warm_sunset">غروب دافئ</string>
+    <string name="blue_orange_contrast">تباين أزرق برتقالي</string>
+    <string name="purple_green_vibrant">بنفسجي أخضر نابض</string>
+    <string name="maroon_teal">كستنائي أخضر مزرق</string>
+    <string name="warm_earthy">أرضي دافئ</string>
+    <string name="monochrome_grey">رمادي أحادي اللون</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">الإشعارات</string>
+    <string name="daily_reminders">تذكيرات يومية</string>
+    <string name="enable_daily_reminders">تفعيل التذكيرات اليومية</string>
+    <string name="reminder_time">وقت التذكير</string>
+    <string name="change_time">تغيير الوقت</string>
+    <string name="color_preview">معاينة اللون</string>
+    <string name="primary">أساسي</string>
+    <string name="secondary">ثانوي</string>
+    <string name="tertiary">ثالث</string>
+    <string name="accent">لهجة</string>
+    <string name="test_notification">اختبار الإشعار</string>
+    <string name="notification_description">احصل على تذكيرات يومية لممارسة مفرداتك</string>
+    <string name="notification_permission_required">إذن الإشعارات مطلوب للتذكيرات اليومية</string>
+    <string name="grant_permission">منح الإذن</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">حدث خطأ</string>
     <string name="network_error">خطأ في الشبكة</string>

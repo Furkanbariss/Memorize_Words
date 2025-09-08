@@ -104,6 +104,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Цветовая Палитра</string>
+    <string name="color_palette_description">Выберите предпочитаемую цветовую тему</string>
+    <string name="purple_gradient">Фиолетовый Градиент</string>
+    <string name="warm_sunset">Теплый Закат</string>
+    <string name="blue_orange_contrast">Сине-Оранжевый Контраст</string>
+    <string name="purple_green_vibrant">Фиолетово-Зеленый Яркий</string>
+    <string name="maroon_teal">Бордово-Бирюзовый</string>
+    <string name="warm_earthy">Теплая Земля</string>
+    <string name="monochrome_grey">Монохромный Серый</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Уведомления</string>
+    <string name="daily_reminders">Ежедневные Напоминания</string>
+    <string name="enable_daily_reminders">Включить Ежедневные Напоминания</string>
+    <string name="reminder_time">Время Напоминания</string>
+    <string name="change_time">Изменить Время</string>
+    <string name="color_preview">Предварительный Просмотр Цвета</string>
+    <string name="primary">Основной</string>
+    <string name="secondary">Вторичный</string>
+    <string name="tertiary">Третичный</string>
+    <string name="accent">Акцент</string>
+    <string name="test_notification">Тест Уведомления</string>
+    <string name="notification_description">Получайте ежедневные напоминания для практики вашего словарного запаса</string>
+    <string name="notification_permission_required">Разрешение на уведомления необходимо для ежедневных напоминаний</string>
+    <string name="grant_permission">Предоставить Разрешение</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">Произошла ошибка</string>
     <string name="network_error">Ошибка сети</string>

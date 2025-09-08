@@ -144,6 +144,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Renk Paleti</string>
+    <string name="color_palette_description">Tercih ettiğiniz renk temasını seçin</string>
+    <string name="purple_gradient">Mor Gradyan</string>
+    <string name="warm_sunset">Sıcak Gün Batımı</string>
+    <string name="blue_orange_contrast">Mavi Turuncu Kontrast</string>
+    <string name="purple_green_vibrant">Mor Yeşil Canlı</string>
+    <string name="maroon_teal">Bordo Teal</string>
+    <string name="warm_earthy">Sıcak Toprak</string>
+    <string name="monochrome_grey">Monokrom Gri</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Bildirimler</string>
+    <string name="daily_reminders">Günlük Hatırlatıcılar</string>
+    <string name="enable_daily_reminders">Günlük Hatırlatıcıları Etkinleştir</string>
+    <string name="reminder_time">Hatırlatma Zamanı</string>
+    <string name="change_time">Zamanı Değiştir</string>
+    <string name="color_preview">Renk Önizlemesi</string>
+    <string name="primary">Birincil</string>
+    <string name="secondary">İkincil</string>
+    <string name="tertiary">Üçüncül</string>
+    <string name="accent">Vurgu</string>
+    <string name="test_notification">Bildirimi Test Et</string>
+    <string name="notification_description">Kelime dağarcığınızı pratik yapmak için günlük hatırlatıcılar alın. Bu özelliği etkinleştirmek için istendiğinde bildirim izni verin.</string>
+    <string name="notification_permission_required">Günlük hatırlatıcılar için bildirim izni gereklidir</string>
+    <string name="grant_permission">İzin Ver</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">Bir hata oluştu</string>
     <string name="network_error">Ağ hatası</string>

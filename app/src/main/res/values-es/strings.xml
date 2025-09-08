@@ -143,6 +143,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Paleta de Colores</string>
+    <string name="color_palette_description">Elija su tema de color preferido</string>
+    <string name="purple_gradient">Gradiente Púrpura</string>
+    <string name="warm_sunset">Atardecer Cálido</string>
+    <string name="blue_orange_contrast">Contraste Azul Naranja</string>
+    <string name="purple_green_vibrant">Púrpura Verde Vibrante</string>
+    <string name="maroon_teal">Granate Verde Azulado</string>
+    <string name="warm_earthy">Tierra Cálida</string>
+    <string name="monochrome_grey">Gris Monocromo</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Notificaciones</string>
+    <string name="daily_reminders">Recordatorios Diarios</string>
+    <string name="enable_daily_reminders">Habilitar Recordatorios Diarios</string>
+    <string name="reminder_time">Hora de Recordatorio</string>
+    <string name="change_time">Cambiar Hora</string>
+    <string name="color_preview">Vista Previa de Color</string>
+    <string name="primary">Primario</string>
+    <string name="secondary">Secundario</string>
+    <string name="tertiary">Terciario</string>
+    <string name="accent">Acento</string>
+    <string name="test_notification">Probar Notificación</string>
+    <string name="notification_description">Reciba recordatorios diarios para practicar su vocabulario</string>
+    <string name="notification_permission_required">Se requiere permiso de notificación para recordatorios diarios</string>
+    <string name="grant_permission">Otorgar Permiso</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">Ocurrió un error</string>
     <string name="network_error">Error de red</string>

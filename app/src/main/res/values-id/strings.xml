@@ -144,6 +144,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Palet Warna</string>
+    <string name="color_palette_description">Pilih tema warna yang Anda sukai</string>
+    <string name="purple_gradient">Gradien Ungu</string>
+    <string name="warm_sunset">Matahari Terbenam Hangat</string>
+    <string name="blue_orange_contrast">Kontras Biru Oranye</string>
+    <string name="purple_green_vibrant">Ungu Hijau Cerah</string>
+    <string name="maroon_teal">Maroon Teal</string>
+    <string name="warm_earthy">Hangat Bumi</string>
+    <string name="monochrome_grey">Monokrom Abu-abu</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Notifikasi</string>
+    <string name="daily_reminders">Pengingat Harian</string>
+    <string name="enable_daily_reminders">Aktifkan Pengingat Harian</string>
+    <string name="reminder_time">Waktu Pengingat</string>
+    <string name="change_time">Ubah Waktu</string>
+    <string name="color_preview">Pratinjau Warna</string>
+    <string name="primary">Utama</string>
+    <string name="secondary">Sekunder</string>
+    <string name="tertiary">Tersier</string>
+    <string name="accent">Aksen</string>
+    <string name="test_notification">Test Notifikasi</string>
+    <string name="notification_description">Dapatkan pengingat harian untuk berlatih kosakata Anda</string>
+    <string name="notification_permission_required">Izin notifikasi diperlukan untuk pengingat harian</string>
+    <string name="grant_permission">Berikan Izin</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">Terjadi kesalahan</string>
     <string name="network_error">Kesalahan jaringan</string>

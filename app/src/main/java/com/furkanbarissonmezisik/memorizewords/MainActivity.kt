@@ -24,11 +24,16 @@ import com.furkanbarissonmezisik.memorizewords.ui.theme.MemorizeWordsTheme
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ThemeManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.AppLanguage
+import com.furkanbarissonmezisik.memorizewords.notification.NotificationManager
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Initialize notification channel
+        val notificationManager = NotificationManager(this)
+        notificationManager.createNotificationChannel()
         
         enableEdgeToEdge()
         setContent {

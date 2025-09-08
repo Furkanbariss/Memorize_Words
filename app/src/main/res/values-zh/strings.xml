@@ -143,6 +143,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">调色板</string>
+    <string name="color_palette_description">选择您喜欢的颜色主题</string>
+    <string name="purple_gradient">紫色渐变</string>
+    <string name="warm_sunset">温暖日落</string>
+    <string name="blue_orange_contrast">蓝橙对比</string>
+    <string name="purple_green_vibrant">紫绿鲜艳</string>
+    <string name="maroon_teal">栗色青绿</string>
+    <string name="warm_earthy">温暖大地</string>
+    <string name="monochrome_grey">单色灰</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">通知</string>
+    <string name="daily_reminders">每日提醒</string>
+    <string name="enable_daily_reminders">启用每日提醒</string>
+    <string name="reminder_time">提醒时间</string>
+    <string name="change_time">更改时间</string>
+    <string name="color_preview">颜色预览</string>
+    <string name="primary">主要</string>
+    <string name="secondary">次要</string>
+    <string name="tertiary">第三</string>
+    <string name="accent">强调</string>
+    <string name="test_notification">测试通知</string>
+    <string name="notification_description">获取每日提醒来练习您的词汇</string>
+    <string name="notification_permission_required">每日提醒需要通知权限</string>
+    <string name="grant_permission">授予权限</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">发生错误</string>
     <string name="network_error">网络错误</string>

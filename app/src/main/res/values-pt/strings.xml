@@ -104,6 +104,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Paleta de Cores</string>
+    <string name="color_palette_description">Escolha seu tema de cor preferido</string>
+    <string name="purple_gradient">Gradiente Roxo</string>
+    <string name="warm_sunset">Pôr do Sol Quente</string>
+    <string name="blue_orange_contrast">Contraste Azul Laranja</string>
+    <string name="purple_green_vibrant">Roxo Verde Vibrante</string>
+    <string name="maroon_teal">Marrom Verde Azulado</string>
+    <string name="warm_earthy">Terra Quente</string>
+    <string name="monochrome_grey">Cinza Monocromático</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Notificações</string>
+    <string name="daily_reminders">Lembretes Diários</string>
+    <string name="enable_daily_reminders">Habilitar Lembretes Diários</string>
+    <string name="reminder_time">Horário do Lembrete</string>
+    <string name="change_time">Alterar Horário</string>
+    <string name="color_preview">Visualização de Cor</string>
+    <string name="primary">Primário</string>
+    <string name="secondary">Secundário</string>
+    <string name="tertiary">Terciário</string>
+    <string name="accent">Destaque</string>
+    <string name="test_notification">Testar Notificação</string>
+    <string name="notification_description">Receba lembretes diários para praticar seu vocabulário</string>
+    <string name="notification_permission_required">Permissão de notificação é necessária para lembretes diários</string>
+    <string name="grant_permission">Conceder Permissão</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">Ocorreu um erro</string>
     <string name="network_error">Erro de rede</string>

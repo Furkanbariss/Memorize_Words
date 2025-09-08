@@ -35,6 +35,21 @@ import com.furkanbarissonmezisik.memorizewords.ui.theme.LanguageManager
 import com.furkanbarissonmezisik.memorizewords.ui.theme.AppLanguage
 import com.furkanbarissonmezisik.memorizewords.ui.theme.ColorPalette
 import com.furkanbarissonmezisik.memorizewords.ui.theme.getColorsForPalette
+import com.furkanbarissonmezisik.memorizewords.notification.NotificationManager
+import com.furkanbarissonmezisik.memorizewords.notification.NotificationSettingsManager
+import com.furkanbarissonmezisik.memorizewords.ui.components.TimePickerDialog
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Info
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.core.content.ContextCompat
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.compose.LocalActivityResultRegistryOwner
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,6 +59,43 @@ fun SettingsScreen(
     languageManager: LanguageManager
 ) {
     val context = LocalContext.current
+    val notificationManager = remember { NotificationManager(context) }
+    val notificationSettings = remember { NotificationSettingsManager(context) }
+    
+    // Time picker dialog state
+    var showTimePicker by remember { mutableStateOf(false) }
+    
+    // Check notification permission
+    val hasNotificationPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
+    } else {
+        // For Android 12 and below, check if notifications are enabled
+        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
+        notificationManager.areNotificationsEnabled()
+    }
+    
+    // Get Activity context for permission launcher
+    val activity = context as? ComponentActivity
+    val activityResultRegistryOwner = LocalActivityResultRegistryOwner.current
+    
+    // Permission launcher
+    val permissionLauncher = if (activityResultRegistryOwner != null) {
+        rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.RequestPermission()
+        ) { isGranted ->
+            if (isGranted) {
+                // Permission granted, schedule notification if enabled
+                if (notificationSettings.isEnabled) {
+                    notificationManager.scheduleDailyNotification(
+                        notificationSettings.reminderHour,
+                        notificationSettings.reminderMinute
+                    )
+                }
+            }
+        }
+    } else {
+        null
+    }
     
     // Get app version info
     val packageInfo = context.packageManager.getPackageInfo(context.packageName, 0)
@@ -100,7 +152,7 @@ fun SettingsScreen(
             // App Settings title
             item {
                 Text(
-                    text = "App Settings",
+                    text = stringResource(R.string.app_settings),
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -243,7 +295,7 @@ fun SettingsScreen(
                                     horizontalAlignment = Alignment.CenterHorizontally
                                 ) {
                                     Text(
-                                        text = "Light",
+                                        text = stringResource(R.string.light_theme),
                                         style = MaterialTheme.typography.labelSmall,
                                         color = LightOnBackground
                                     )
@@ -273,7 +325,7 @@ fun SettingsScreen(
                                     horizontalAlignment = Alignment.CenterHorizontally
                                 ) {
                                     Text(
-                                        text = "Dark",
+                                        text = stringResource(R.string.dark_theme),
                                         style = MaterialTheme.typography.labelSmall,
                                         color = DarkOnBackground
                                     )
@@ -320,7 +372,7 @@ fun SettingsScreen(
                             )
                             
                             Text(
-                                text = "Color Palette",
+                                text = stringResource(R.string.color_palette),
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Medium
                             )
@@ -330,7 +382,7 @@ fun SettingsScreen(
                         var paletteExpanded by remember { mutableStateOf(false) }
                         
                         Text(
-                            text = "Choose your preferred color theme",
+                            text = stringResource(R.string.color_palette_description),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(bottom = 8.dp)
@@ -341,7 +393,7 @@ fun SettingsScreen(
                             onExpandedChange = { paletteExpanded = !paletteExpanded }
                         ) {
                             OutlinedTextField(
-                                value = themeManager.getColorPaletteDisplayName(themeManager.currentColorPalette),
+                                value = themeManager.getColorPaletteDisplayName(themeManager.currentColorPalette, context),
                                 onValueChange = {},
                                 readOnly = true,
                                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = paletteExpanded) },
@@ -361,7 +413,7 @@ fun SettingsScreen(
                                     DropdownMenuItem(
                                         text = { 
                                             Text(
-                                                text = themeManager.getColorPaletteDisplayName(palette),
+                                                text = themeManager.getColorPaletteDisplayName(palette, context),
                                                 style = MaterialTheme.typography.bodyMedium
                                             )
                                         },
@@ -399,7 +451,7 @@ fun SettingsScreen(
                         // Color palette preview section
                         Spacer(modifier = Modifier.height(16.dp))
                         Text(
-                            text = "Color Preview",
+                            text = stringResource(R.string.color_preview),
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Medium,
                             modifier = Modifier.padding(bottom = 8.dp)
@@ -412,10 +464,10 @@ fun SettingsScreen(
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             listOf(
-                                "Primary" to currentPaletteColors.primary,
-                                "Secondary" to currentPaletteColors.secondary,
-                                "Tertiary" to currentPaletteColors.tertiary,
-                                "Accent" to currentPaletteColors.accent
+                                stringResource(R.string.primary) to currentPaletteColors.primary,
+                                stringResource(R.string.secondary) to currentPaletteColors.secondary,
+                                stringResource(R.string.tertiary) to currentPaletteColors.tertiary,
+                                stringResource(R.string.accent) to currentPaletteColors.accent
                             ).forEach { (name, color) ->
                                 Column(
                                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -438,6 +490,180 @@ fun SettingsScreen(
                                 }
                             }
                         }
+                    }
+                }
+            }
+            
+            // Notification Settings Card
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant
+                    )
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 16.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Notifications,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.padding(end = 16.dp)
+                            )
+                            
+                            Text(
+                                text = stringResource(R.string.notifications),
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Medium
+                            )
+                        }
+                        
+                        Text(
+                            text = stringResource(R.string.notification_description),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 16.dp)
+                        )
+                        
+                        // Show permission status message
+                        if (!hasNotificationPermission && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            Card(
+                                colors = CardDefaults.cardColors(
+                                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                                ),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(bottom = 16.dp)
+                            ) {
+                                Row(
+                                    modifier = Modifier.padding(12.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Info,
+                                        contentDescription = null,
+                                        tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                                        modifier = Modifier.padding(end = 8.dp)
+                                    )
+                                    Text(
+                                        text = stringResource(R.string.notification_permission_required),
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                                    )
+                                }
+                            }
+                        }
+                        
+                        // Enable/Disable toggle
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 8.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Switch(
+                                checked = notificationSettings.isEnabled,
+                                onCheckedChange = { enabled ->
+                                    notificationSettings.updateEnabled(enabled)
+                                    if (enabled) {
+                                        if (hasNotificationPermission) {
+                                            notificationManager.scheduleDailyNotification(
+                                                notificationSettings.reminderHour,
+                                                notificationSettings.reminderMinute
+                                            )
+                                        } else {
+                                            permissionLauncher?.launch(Manifest.permission.POST_NOTIFICATIONS)
+                                        }
+                                    } else {
+                                        notificationManager.cancelDailyNotification()
+                                    }
+                                }
+                            )
+                            Spacer(modifier = Modifier.width(16.dp))
+                            Text(
+                                text = stringResource(R.string.enable_daily_reminders),
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        }
+                        
+                        // Time picker (only show if enabled)
+                        if (notificationSettings.isEnabled) {
+                            Spacer(modifier = Modifier.height(16.dp))
+                            
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 8.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Info,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.padding(end = 16.dp)
+                                )
+                                
+                                Text(
+                                    text = stringResource(R.string.reminder_time),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    modifier = Modifier.weight(1f)
+                                )
+                                
+                                Text(
+                                    text = notificationSettings.getFormattedTime(),
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.primary,
+                                    fontWeight = FontWeight.Medium
+                                )
+                            }
+                            
+                            // Time picker button
+                            Button(
+                                onClick = {
+                                    showTimePicker = true
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.secondary
+                                )
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Edit,
+                                    contentDescription = null,
+                                    modifier = Modifier.padding(end = 8.dp)
+                                )
+                                Text(stringResource(R.string.change_time))
+                            }
+                        }
+                        
+                        // Test notification button (for debugging)
+                        if (hasNotificationPermission) {
+                            Spacer(modifier = Modifier.height(16.dp))
+                            
+                            Button(
+                                onClick = {
+                                    // Show a test notification
+                                    notificationManager.showNotification(languageManager.currentLanguage)
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.tertiary
+                                )
+                            ) {
+                                Text(stringResource(R.string.test_notification))
+                            }
+                            
+                        }
+                        
                     }
                 }
             }
@@ -659,5 +885,22 @@ fun SettingsScreen(
                 Spacer(modifier = Modifier.height(16.dp))
             }
         }
+    }
+    
+    // Time Picker Dialog
+    if (showTimePicker) {
+        TimePickerDialog(
+            initialHour = notificationSettings.reminderHour,
+            initialMinute = notificationSettings.reminderMinute,
+            onTimeSelected = { hour, minute ->
+                notificationSettings.setReminderTime(hour, minute)
+                if (notificationSettings.isEnabled) {
+                    notificationManager.scheduleDailyNotification(hour, minute)
+                }
+            },
+            onDismiss = {
+                showTimePicker = false
+            }
+        )
     }
 }

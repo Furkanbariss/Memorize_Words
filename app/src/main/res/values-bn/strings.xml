@@ -104,6 +104,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">রঙের প্যালেট</string>
+    <string name="color_palette_description">আপনার পছন্দের রঙের থিম নির্বাচন করুন</string>
+    <string name="purple_gradient">বেগুনি গ্রেডিয়েন্ট</string>
+    <string name="warm_sunset">উষ্ণ সূর্যাস্ত</string>
+    <string name="blue_orange_contrast">নীল কমলা কনট্রাস্ট</string>
+    <string name="purple_green_vibrant">বেগুনি সবুজ প্রাণবন্ত</string>
+    <string name="maroon_teal">ম্যারুন টিল</string>
+    <string name="warm_earthy">উষ্ণ মাটির</string>
+    <string name="monochrome_grey">মনোক্রোম ধূসর</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">বিজ্ঞপ্তি</string>
+    <string name="daily_reminders">দৈনিক অনুস্মারক</string>
+    <string name="enable_daily_reminders">দৈনিক অনুস্মারক সক্রিয় করুন</string>
+    <string name="reminder_time">অনুস্মারক সময়</string>
+    <string name="change_time">সময় পরিবর্তন করুন</string>
+    <string name="color_preview">রঙের প্রিভিউ</string>
+    <string name="primary">প্রাথমিক</string>
+    <string name="secondary">দ্বিতীয়</string>
+    <string name="tertiary">তৃতীয়</string>
+    <string name="accent">অ্যাকসেন্ট</string>
+    <string name="test_notification">বিজ্ঞপ্তি পরীক্ষা</string>
+    <string name="notification_description">আপনার শব্দভাণ্ডার অনুশীলনের জন্য দৈনিক অনুস্মারক পান</string>
+    <string name="notification_permission_required">দৈনিক অনুস্মারকের জন্য বিজ্ঞপ্তি অনুমতি প্রয়োজন</string>
+    <string name="grant_permission">অনুমতি দিন</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">একটি ত্রুটি ঘটেছে</string>
     <string name="network_error">নেটওয়ার্ক ত্রুটি</string>

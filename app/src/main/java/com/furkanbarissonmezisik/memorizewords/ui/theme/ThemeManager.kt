@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import com.furkanbarissonmezisik.memorizewords.R
 
 enum class ThemeMode {
     LIGHT, DARK, SYSTEM
@@ -63,15 +64,15 @@ class ThemeManager(context: Context) {
         return false // Default value, actual detection happens in Theme.kt
     }
     
-    fun getColorPaletteDisplayName(palette: ColorPalette): String {
+    fun getColorPaletteDisplayName(palette: ColorPalette, context: Context): String {
         return when (palette) {
-            ColorPalette.PURPLE_GRADIENT -> "Purple Gradient"
-            ColorPalette.WARM_SUNSET -> "Warm Sunset"
-            ColorPalette.BLUE_ORANGE_CONTRAST -> "Blue Orange Contrast"
-            ColorPalette.PURPLE_GREEN_VIBRANT -> "Purple Green Vibrant"
-            ColorPalette.MAROON_TEAL -> "Maroon Teal"
-            ColorPalette.WARM_EARTHY -> "Warm Earthy"
-            ColorPalette.MONOCHROME_GREY -> "Monochrome Grey"
+            ColorPalette.PURPLE_GRADIENT -> context.getString(R.string.purple_gradient)
+            ColorPalette.WARM_SUNSET -> context.getString(R.string.warm_sunset)
+            ColorPalette.BLUE_ORANGE_CONTRAST -> context.getString(R.string.blue_orange_contrast)
+            ColorPalette.PURPLE_GREEN_VIBRANT -> context.getString(R.string.purple_green_vibrant)
+            ColorPalette.MAROON_TEAL -> context.getString(R.string.maroon_teal)
+            ColorPalette.WARM_EARTHY -> context.getString(R.string.warm_earthy)
+            ColorPalette.MONOCHROME_GREY -> context.getString(R.string.monochrome_grey)
         }
     }
     

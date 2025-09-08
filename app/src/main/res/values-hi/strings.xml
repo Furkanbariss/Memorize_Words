@@ -104,6 +104,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">रंग पैलेट</string>
+    <string name="color_palette_description">अपना पसंदीदा रंग थीम चुनें</string>
+    <string name="purple_gradient">बैंगनी ग्रेडिएंट</string>
+    <string name="warm_sunset">गर्म सूर्यास्त</string>
+    <string name="blue_orange_contrast">नीला नारंगी कंट्रास्ट</string>
+    <string name="purple_green_vibrant">बैंगनी हरा जीवंत</string>
+    <string name="maroon_teal">मैरून टील</string>
+    <string name="warm_earthy">गर्म मिट्टी</string>
+    <string name="monochrome_grey">मोनोक्रोम ग्रे</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">सूचनाएं</string>
+    <string name="daily_reminders">दैनिक अनुस्मारक</string>
+    <string name="enable_daily_reminders">दैनिक अनुस्मारक सक्षम करें</string>
+    <string name="reminder_time">अनुस्मारक समय</string>
+    <string name="change_time">समय बदलें</string>
+    <string name="color_preview">रंग पूर्वावलोकन</string>
+    <string name="primary">प्राथमिक</string>
+    <string name="secondary">द्वितीयक</string>
+    <string name="tertiary">तृतीयक</string>
+    <string name="accent">स्वर</string>
+    <string name="test_notification">सूचना परीक्षण</string>
+    <string name="notification_description">अपनी शब्दावली का अभ्यास करने के लिए दैनिक अनुस्मारक प्राप्त करें</string>
+    <string name="notification_permission_required">दैनिक अनुस्मारक के लिए सूचना अनुमति आवश्यक है</string>
+    <string name="grant_permission">अनुमति दें</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">एक त्रुटि हुई</string>
     <string name="network_error">नेटवर्क त्रुटि</string>

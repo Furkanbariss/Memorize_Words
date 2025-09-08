@@ -144,6 +144,33 @@
     <string name="language_russian">Русский</string>
     <string name="language_bengali">বাংলা</string>
     
+    <!-- Color Palette -->
+    <string name="color_palette">Color Palette</string>
+    <string name="color_palette_description">Choose your preferred color theme</string>
+    <string name="purple_gradient">Purple Gradient</string>
+    <string name="warm_sunset">Warm Sunset</string>
+    <string name="blue_orange_contrast">Blue Orange Contrast</string>
+    <string name="purple_green_vibrant">Purple Green Vibrant</string>
+    <string name="maroon_teal">Maroon Teal</string>
+    <string name="warm_earthy">Warm Earthy</string>
+    <string name="monochrome_grey">Monochrome Grey</string>
+    
+    <!-- Notification Settings -->
+    <string name="notifications">Notifications</string>
+    <string name="daily_reminders">Daily Reminders</string>
+    <string name="enable_daily_reminders">Enable Daily Reminders</string>
+    <string name="reminder_time">Reminder Time</string>
+    <string name="change_time">Change Time</string>
+    <string name="color_preview">Color Preview</string>
+    <string name="primary">Primary</string>
+    <string name="secondary">Secondary</string>
+    <string name="tertiary">Tertiary</string>
+    <string name="accent">Accent</string>
+    <string name="test_notification">Test Notification</string>
+    <string name="notification_description">Get daily reminders to practice your vocabulary. Please grant notification permission when prompted to enable this feature.</string>
+    <string name="notification_permission_required">Notification permission is required for daily reminders</string>
+    <string name="grant_permission">Grant Permission</string>
+    
     <!-- Error Messages -->
     <string name="error_occurred">An error occurred</string>
     <string name="network_error">Network error</string>
