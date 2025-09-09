@@ -189,7 +189,8 @@ fun LearnScreen(
                                 .fillMaxWidth()
                                 .height(56.dp),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.primary
+                                containerColor = MaterialTheme.colorScheme.primary,
+                                contentColor = Color.White
                             )
                         ) {
                             Text(

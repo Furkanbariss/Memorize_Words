@@ -95,7 +95,7 @@
     <string name="skip">Saltar</string>
     <string name="check">Verificar</string>
     <string name="show">Mostrar</string>
-    <string name="completed_percentage">%%d%% completado</string>
+    <string name="completed_percentage">%d%% completado</string>
     
     <!-- Info Screen -->
     <string name="about">Acerca de</string>

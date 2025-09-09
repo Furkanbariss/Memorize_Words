@@ -99,7 +99,8 @@ fun AddWordsScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { showCreateListDialog = true },
-                containerColor = MaterialTheme.colorScheme.primary
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = Color.White
             ) {
                 Text(
                     text = "+",
@@ -151,7 +152,8 @@ fun AddWordsScreen(
                             .fillMaxWidth()
                             .height(56.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primary
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = Color.White
                         )
                     ) {
                         Icon(
@@ -366,7 +368,8 @@ fun AddWordsScreen(
                         listToDelete = null
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.error
+                        containerColor = MaterialTheme.colorScheme.error,
+                        contentColor = Color.White
                     )
                 ) {
                     Text("Delete")

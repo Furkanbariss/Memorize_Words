@@ -82,6 +82,12 @@
     <string name="wrong_answers">गलत उत्तर</string>
     <string name="accuracy">सटीकता</string>
     <string name="restart">पुनः प्रारंभ करें</string>
+    <string name="question">प्रश्न:</string>
+    <string name="type_the_word">शब्द टाइप करें</string>
+    <string name="skip">छोड़ें</string>
+    <string name="check">जांचें</string>
+    <string name="show">दिखाएं</string>
+    <string name="completed_percentage">%d%% पूर्ण</string>
     
     <!-- Info Screen -->
     <string name="about">के बारे में</string>

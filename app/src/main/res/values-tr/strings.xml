@@ -96,7 +96,7 @@
     <string name="skip">Atla</string>
     <string name="check">Kontrol Et</string>
     <string name="show">Göster</string>
-    <string name="completed_percentage">%%d%% tamamlandı</string>
+    <string name="completed_percentage">%d%% tamamlandı</string>
     
     <!-- Info Screen -->
     <string name="about">Hakkında</string>

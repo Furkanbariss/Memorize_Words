@@ -82,6 +82,12 @@
     <string name="wrong_answers">Respostas Incorretas</string>
     <string name="accuracy">Precisão</string>
     <string name="restart">Reiniciar</string>
+    <string name="question">Pergunta:</string>
+    <string name="type_the_word">Digite a palavra</string>
+    <string name="skip">Pular</string>
+    <string name="check">Verificar</string>
+    <string name="show">Mostrar</string>
+    <string name="completed_percentage">%d%% concluído</string>
     
     <!-- Info Screen -->
     <string name="about">Sobre</string>

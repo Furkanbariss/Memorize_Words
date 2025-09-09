@@ -95,7 +95,7 @@
     <string name="skip">跳过</string>
     <string name="check">检查</string>
     <string name="show">显示</string>
-    <string name="completed_percentage">%%d%% 完成</string>
+    <string name="completed_percentage">%d%% 完成</string>
     
     <!-- Info Screen -->
     <string name="about">关于</string>

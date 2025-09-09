@@ -633,7 +633,8 @@ fun SettingsScreen(
                                 },
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = ButtonDefaults.buttonColors(
-                                    containerColor = MaterialTheme.colorScheme.secondary
+                                    containerColor = MaterialTheme.colorScheme.secondary,
+                                    contentColor = Color.White
                                 )
                             ) {
                                 Icon(
@@ -656,7 +657,8 @@ fun SettingsScreen(
                                 },
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = ButtonDefaults.buttonColors(
-                                    containerColor = MaterialTheme.colorScheme.tertiary
+                                    containerColor = MaterialTheme.colorScheme.tertiary,
+                                    contentColor = Color.White
                                 )
                             ) {
                                 Text(stringResource(R.string.test_notification))
@@ -869,7 +871,8 @@ fun SettingsScreen(
                         .fillMaxWidth()
                         .height(56.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = Color.White
                     )
                 ) {
                     Text(

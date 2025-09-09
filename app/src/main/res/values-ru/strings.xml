@@ -82,6 +82,12 @@
     <string name="wrong_answers">Неправильные Ответы</string>
     <string name="accuracy">Точность</string>
     <string name="restart">Перезапустить</string>
+    <string name="question">Вопрос:</string>
+    <string name="type_the_word">Введите слово</string>
+    <string name="skip">Пропустить</string>
+    <string name="check">Проверить</string>
+    <string name="show">Показать</string>
+    <string name="completed_percentage">%d%% завершено</string>
     
     <!-- Info Screen -->
     <string name="about">О Приложении</string>

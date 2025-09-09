@@ -96,7 +96,7 @@
     <string name="skip">Lewati</string>
     <string name="check">Periksa</string>
     <string name="show">Tampilkan</string>
-    <string name="completed_percentage">%%d%% selesai</string>
+    <string name="completed_percentage">%d%% selesai</string>
     
     <!-- Info Screen -->
     <string name="about">Tentang</string>

@@ -102,7 +102,8 @@ fun HomeScreen(
                     .height(56.dp)
                     .padding(bottom = 16.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White
                 )
             ) {
                 Text(
@@ -181,7 +182,8 @@ fun HomeScreen(
                                         Button(
                                             onClick = { onNavigateToLearn(wordList.id) },
                                             colors = ButtonDefaults.buttonColors(
-                                                containerColor = MaterialTheme.colorScheme.tertiary
+                                                containerColor = MaterialTheme.colorScheme.tertiary,
+                                                contentColor = Color.White
                                             ),
                                             modifier = Modifier.padding(end = 8.dp)
                                         ) {
@@ -190,7 +192,8 @@ fun HomeScreen(
                                         Button(
                                             onClick = { onNavigateToWordList(wordList.id) },
                                             colors = ButtonDefaults.buttonColors(
-                                                containerColor = MaterialTheme.colorScheme.primary
+                                                containerColor = MaterialTheme.colorScheme.primary,
+                                                contentColor = Color.White
                                             )
                                         ) {
                                             Text(stringResource(R.string.view))
@@ -239,7 +242,8 @@ fun HomeScreen(
                                 .fillMaxWidth()
                                 .height(56.dp),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.primary
+                                containerColor = MaterialTheme.colorScheme.primary,
+                                contentColor = Color.White
                             )
                         ) {
                             Text(

@@ -87,7 +87,8 @@ fun WordListScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { showAddWordDialog = true },
-                containerColor = MaterialTheme.colorScheme.primary
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = Color.White
             ) {
                 Icon(
                     imageVector = Icons.Default.Add,

@@ -95,7 +95,7 @@
     <string name="skip">تخطي</string>
     <string name="check">تحقق</string>
     <string name="show">عرض</string>
-    <string name="completed_percentage">%%d%% مكتمل</string>
+    <string name="completed_percentage">%d%% مكتمل</string>
     
     <!-- Info Screen -->
     <string name="about">حول</string>
